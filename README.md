@@ -334,13 +334,14 @@ kolla-ansible -i multinode deploy
 
 
 ### 2.12 Instalar os clientes do OpenStack
+Os clientes foram instalados via Python.
 ```
 # Do repositório CentOS
 #dnf install -y centos-release-openstack-victoria
 #dnf upgrade -y
 #dnf install -y python-openstackclient
 
-# Ou do PyPI
+# Ou do Python PyPI
 pip3 install python-openstackclient
 pip3 install gnocchiclient
 ```
@@ -401,7 +402,7 @@ Este script realiza os procedimentos comuns a todos nós, exceto os itens 1.1 (a
 
 A configuração da interface de rede *provider* pode ser feita após a execução do script, e em seguida o host deve ser reiniciado.
 
-Caso os IPs e *hostnames* sejam diferentes, alterar as seguintes variáveis no script.
+Caso os IPs e *hostnames* sejam diferentes, alterar as seguintes variáveis no início do script.
 
 ```bash
 ## AJUSTAR HOSTS E IPs CONFORME NECESSÁRIO
