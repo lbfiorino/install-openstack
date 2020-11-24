@@ -4,6 +4,12 @@ OpenStack Release: **Victoria**
 
 [Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/)
 
+## Limitações
+- A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
+ 
+- Acesso a API por HTTP. A instalação não habilita HTTPS.
+
+
 ## Requisitos mínimos de hardware
 - 2 Interfaces de rede
 - 8GB Memória RAM
@@ -394,6 +400,17 @@ Os scripts a seguir foram escritos para automatizar ao máximo o processo de ins
 Este script realiza os procedimentos comuns a todos nós, exceto os itens 1.1 (atualização do SO) e 1.7 (configuração da interface da rede *provider*).  
 
 A configuração da interface de rede *provider* pode ser feita após a execução do script, e em seguida o host deve ser reiniciado.
+
+Caso os IPs e *hostnames* sejam diferentes, alterar as seguintes variáveis no script.
+
+```bash
+## AJUSTAR HOSTS E IPs CONFORME NECESSÁRIO
+CONTROLLER_HOSTNAME="openstack-controller"
+CONTROLLER_IP="192.168.0.200"
+
+COMPUTE01_HOSTNAME="openstack-compute01" 
+COMPUTE01_IP="192.168.0.201"
+```
 
 ### 4.2 Script *2-install-controller-victoria.sh*
 Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os item 2.1 ao 2.6, e o item 2.12
