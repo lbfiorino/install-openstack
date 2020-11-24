@@ -21,13 +21,21 @@ git clone https://github.com/openstack/kolla-ansible -b stable/victoria
 cd kolla-ansible
 pip3 install .
 
-
+echo "\n\n"
+echo "---------------------------------------------------------------------"
+echo "GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS HOSTS"
+echo "Apenas tecle enter e informe a senha dos usuarios quando solicitado."
+echo "---------------------------------------------------------------------"
+echo "\n\n"
 # 2.3 GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS NÓS PARA OS USUÁRIOS ROOT E STACK
 # Root user
+echo "Chave para o usuario Root\n\n"
 cd /root
 ssh-keygen
 ssh-copy-id root@openstack-controller
 ssh-copy-id root@openstack-compute01
+
+echo "Chave para o usuario Stack\n\n"
 # Stack user
 sudo -H -u stack bash -c 'ssh-keygen; ssh-copy-id stack@openstack-controller; ssh-copy-id stack@openstack-compute01' 
 
