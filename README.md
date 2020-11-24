@@ -136,13 +136,14 @@ SELINUX=disabled
 ### 1.7 Configurar a interface da rede provider SEM IP
 
 Editar o arquivo */etc/sysconfig/network-scripts/ifcfg-enp0s8* e ajustar os parâmetros de acordo com o exemplo abaixo.
-
-    TYPE="Ethernet"
-    BOOTPROTO="none"
-    NAME="enp0s8"
-    UUID=<UUID>
-    DEVICE="enp0s8"
-    ONBOOT="yes"
+```bash
+TYPE="Ethernet"
+BOOTPROTO="none"
+NAME="enp0s8"
+UUID=<UUID>
+DEVICE="enp0s8"
+ONBOOT="yes"
+```
 
 Reiniciar a máquina para aplicar as alterações.
 
@@ -335,7 +336,7 @@ kolla-ansible -i multinode deploy
 
 ### 2.12 Instalar os clientes do OpenStack
 Os clientes foram instalados via Python.
-```
+```bash
 # Do repositório CentOS
 #dnf install -y centos-release-openstack-victoria
 #dnf upgrade -y
@@ -385,9 +386,9 @@ No controlador, adicionar o host *openstack-compute02* nos arquivos abaixo dentr
 
 Executar os comandos abaixo no controlador com o usuário *root*.
 ```bash
-# cd /root
-# cd ./kolla-ansible/tools/
-# ./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
+cd /root
+cd ./kolla-ansible/tools/
+./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
 ```
 
 ## 4. Scripts para automatizar os processos
