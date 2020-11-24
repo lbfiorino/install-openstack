@@ -123,7 +123,7 @@ Editar o arquivo */etc/selinux/config* e alterar o parametro SELINUX para *disab
 SELINUX=disabled
 ```
 
-### 1.6 Adicionar hosts no /etc/hosts
+### 1.6 Adicionar hosts no */etc/hosts*
 ```bash
 # controller
 192.168.0.200           openstack-controller
@@ -213,7 +213,7 @@ pip3 install .
 ```
 
 
-### 2.3 Geração da chave ssh e inserção nos nós para os usuários root e stack
+### 2.3 Geração da chave ssh e inserção nos nós para os usuários *root* e *stack*
 Para o usuário *root*:
 ```bash
 cd /root
@@ -354,8 +354,8 @@ Usuário: **admin**
 Senha: **keystoneadmin**
 
 
-### 2.14 Tunning Ansible
-Para melhores resultados, realizar a seguinte configuração do Ansible.
+### 2.14 Tunning Ansible (Opcional)
+Para melhores resultados, realizar a seguinte configuração do Ansible antes do item 2.11 (verificação da configuração e *deploy*).
 
 Criar o arquivo */etc/ansible/ansible.cfg* com o conteúdo abaixo.
 
