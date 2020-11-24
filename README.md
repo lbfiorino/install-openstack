@@ -7,7 +7,7 @@ OpenStack Release: **Victoria**
 ## Limitações
 - A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
  
-- Acesso a API por HTTP. A instalação não habilita HTTPS.
+- Acesso a API por HTTP. Requer estudos e testes para habilitar HTTPS.
 
 
 ## Requisitos mínimos de hardware
