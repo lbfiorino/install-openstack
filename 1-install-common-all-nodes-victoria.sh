@@ -33,6 +33,7 @@ python3 -m pip install --upgrade setuptools
 
 
 # 1.3 DESABILITAR NETWORKMANAGER E HABILITAR NETWORK-SCRIPTS
+dnf install -y network-scripts
 systemctl stop NetworkManager.service
 systemctl disable NetworkManager.service
 systemctl enable network.service
