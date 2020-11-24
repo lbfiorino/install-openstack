@@ -92,24 +92,24 @@ PROXIMOS PASSOS NO CONTROLADOR:
         kolla_base_distro: \"centos\"
         kolla_install_type: \"source\"
         openstack_release: \"victoria\"
-		# kolla_internal_vip_address: IP não utilizado na rede
+        # kolla_internal_vip_address: IP não utilizado na rede
         kolla_internal_vip_address: \"192.168.0.199\"
         network_interface: \"enp0s3\"
         neutron_external_interface: \"enp0s8\"
 
-		enable_ceilometer: \"yes\"
-		enable_gnocchi: \"yes\"
-		enable_neutron_provider_networks: \"yes\"
-		enable_redis: \"yes\"
+        enable_ceilometer: \"yes\"
+        enable_gnocchi: \"yes\"
+        enable_neutron_provider_networks: \"yes\"
+        enable_redis: \"yes\"
 
 
-		Nota:
-		
-		Em ambiente virtualizado mudar o tipo de virtualização para QEMU:
-		
-		nova_compute_virt_type: \"qemu\"
-				
-				
+        Nota:
+
+        Em ambiente virtualizado mudar o tipo de virtualização para QEMU:
+        
+        nova_compute_virt_type: \"qemu\"
+
+
 2.9 Configurar o arquivo /root/multinode
 
 	[control]
