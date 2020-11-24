@@ -346,6 +346,20 @@ URL: **http<nolink>://192.168.0.200**
 Usuário: **admin**  
 Senha: **keystoneadmin**
 
+
+### 2.14 Tunning Ansible
+Para melhores resultados, realizar a seguinte configuração do Ansible.
+
+Criar o arquivo */etc/ansible/ansible.cfg* com o conteúdo abaixo.
+
+```bash
+[defaults]
+host_key_checking=False
+pipelining=True
+forks=100
+```
+
+
 ## 3. Para adicionar outros Nós de Computação
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
