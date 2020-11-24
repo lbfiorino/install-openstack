@@ -21,7 +21,7 @@ OpenStack Release: **Victoria**
 ## Infraestrutura utilizada
 A infraestrutura foi configurada em um ambiente virtual utilizando o VirtualBox em um host com duas interfaces de rede físicas.  
 
-As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas interfaces de rede em modo bridge, uma na rede interna e outra na rede do roteador da operadora (*provider*). 
+As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas interfaces de rede em modo bridge, uma na rede interna (*management*) e outra na rede do roteador da operadora (*provider*). 
  
 :warning: Nota:
 >Não foi utlizado Vlan nas redes.
@@ -382,6 +382,6 @@ Este script realiza os procedimentos comuns a todos nós exceto os itens 1.1 (at
 A configuração da interface de rede *provider* pode ser feita após a execução do script, e em seguida o host deve ser reiniciado.
 
 ### 4.2 Script *2-install-controller-victoria.sh*
-Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os item 2.1 ao 2.6, e do item 2.12
+Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os item 2.1 ao 2.6, e o item 2.12
 
 Deve ser executado após o script *1-install-common-all-nodes-victoria.sh*.
