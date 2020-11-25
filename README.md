@@ -391,7 +391,7 @@ cd ./kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
 ```
 
-## 4. Scripts para automatizar os processos
+## 4. Scripts para automatizar parte dos processos
 
 Os scripts a seguir foram escritos para automatizar ao máximo o processo de instalação.
 
