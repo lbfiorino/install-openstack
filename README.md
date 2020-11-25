@@ -65,7 +65,7 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 >- Em caso de problema no *pull* das imagens do docker, verificar o MTU da rede.
 
 
-## 1. Procedimentos comuns a <ins>TODOS OS NÓS</ins>
+## 1. Procedimentos comuns a TODOS OS NÓS
 :warning: Nota:
 > Todo o processo de instalação teve como base o usuário *root* e o diretório */root/*
 
@@ -192,7 +192,7 @@ systemctl enable docker
 ```
 
 
-## 2. Procedimentos específicos no <u>CONTROLADOR</u>
+## 2. Procedimentos específicos no CONTROLADOR
 :warning: Nota:
 > Novamente, todo o processo de instalação teve como base o usuário *root* e o diretório */root/*
 
