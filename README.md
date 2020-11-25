@@ -38,9 +38,9 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 - Nomes das interfaces devem ser iguais nos nós
 
 - Interfaces:
-    - **enp0s3**: *Management Network* - (192.168.0.0/24 - Rede Interna)
+    - **enp0s3**: *Management Network* - 192.168.0.0/24 (Rede Interna)
 
-    - **enp0s8**: *Provider Network* - (192.168.254.0/24 -  Roteador da Operadora)
+    - **enp0s8**: *Provider Network* - 192.168.254.0/24 (Roteador da Operadora)
 
 - IP dos Hosts: 
     - Nó Controlador: **openstack-controller**
