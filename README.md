@@ -65,7 +65,7 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 >- Em caso de problema no *pull* das imagens do docker, verificar o MTU da rede.
 
 
-## 1. Procedimentos comuns a <u>TODOS OS NÓS</u>
+## 1. Procedimentos comuns a <ins>TODOS OS NÓS</ins>
 :warning: Nota:
 > Todo o processo de instalação teve como base o usuário *root* e o diretório */root/*
 
