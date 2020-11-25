@@ -349,10 +349,10 @@ pip3 install gnocchiclient
 
 ### 2.13 Acessar o Horizon
 
-URL: **http<nolink>://192.168.0.200**
+URL: `http://192.168.0.200`  
 
-Usuário: **admin**  
-Senha: **keystoneadmin**
+Usuário: `admin`  
+&nbsp;&nbsp;Senha: `keystoneadmin`
 
 
 ### 2.14 Tunning Ansible (Opcional)
@@ -376,7 +376,7 @@ Os scripts a seguir foram escritos para automatizar ao máximo o processo de ins
 - *1-install-common-all-nodes-victoria.sh*
 - *2-install-controller-victoria.sh*
 
-### 3.1 Script *1-install-common-all-nodes-victoria.sh*
+### 3.1 Script *1-install-common-all-nodes-victoria.sh* (para todos os nós)
 Este script realiza os procedimentos comuns a todos nós, exceto os itens 1.1 (atualização do SO) e 1.7 (configuração da interface da rede *provider*).  
 
 A configuração da interface de rede *provider* pode ser feita após a execução do script, e em seguida o host deve ser reiniciado.
@@ -392,7 +392,7 @@ COMPUTE01_HOSTNAME="openstack-compute01"
 COMPUTE01_IP="192.168.0.201"
 ```
 
-### 3.2 Script *2-install-controller-victoria.sh*
+### 3.2 Script *2-install-controller-victoria.sh* (para o controlador)
 Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os item 2.1 ao 2.6, e o item 2.12
 
 Deve ser executado após o script *1-install-common-all-nodes-victoria.sh*.
