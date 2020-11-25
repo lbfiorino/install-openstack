@@ -33,8 +33,7 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 >Não foi utlizado Vlan nas redes.
 
 
-
-#### Configuração da rede
+### Configuração da rede
 
 - Nomes das interfaces devem ser iguais nos nós
 
