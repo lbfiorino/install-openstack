@@ -91,6 +91,7 @@ dnf install -y python3-devel libffi-devel gcc openssl-devel python3-libselinux
 
 # Utilitários
 dnf install -y git python3-pip wget curl telnet tcpdump net-tools htop dstat nano
+
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade setuptools
 ```
@@ -99,8 +100,10 @@ python3 -m pip install --upgrade setuptools
 ### 1.3 Desabilitar NetworkManager e habilitar network-scripts
 ```bash
 dnf install -y network-scripts
+
 systemctl stop NetworkManager.service
 systemctl disable NetworkManager.service
+
 systemctl enable network.service
 systemctl start network.service
 ```
@@ -239,8 +242,10 @@ Copiar os arquivos:
 - *multinode* para */root/*
 ```bash
 cd /root
+
 # Copia arquivo para /etc/kolla/globals.yaml
 cp -r ./kolla-ansible/etc/kolla /etc/kolla/
+
 # Copia os arquivos de inventário (all-in-one, multinode) na raiz do diretório /root
 cp ~/kolla-ansible/ansible/inventory/* .
 ```
@@ -248,8 +253,7 @@ cp ~/kolla-ansible/ansible/inventory/* .
 
 ### 2.5 Geração das senhas do kolla
 ```bash
-cd /root
-cd ./kolla-ansible/tools
+cd /root/kolla-ansible/tools
 python3 generate_passwords.py
 ```
 
