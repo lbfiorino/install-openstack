@@ -60,13 +60,13 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 
 ![Infraestrutura](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/infra-virtual.svg)
 
-#### :warning: Notas:
+:warning: Notas:
 >- No VirtualBox, configurar o Modo Promíscuo nas interfaces de rede das VMs para "Permitir Tudo".
 >- Em caso de problema no *pull* das imagens do docker, verificar o MTU da rede.
 
 
 ## 1. Procedimentos comuns a TODOS OS NÓS
-#### :warning: Nota:
+:warning: Nota:
 > Todo o processo de instalação teve como base o usuário *root* e o diretório */root/*
 
 ### 1.1 Atualizar o sistema operacional
@@ -193,7 +193,7 @@ systemctl enable docker
 
 
 ## 2. Procedimentos específicos no CONTROLADOR
-#### :warning: Nota:
+:warning: Nota:
 > Novamente, todo o processo de instalação teve como base o usuário *root* e o diretório */root/*
 
 ### 2.1 Instalar Kolla
@@ -366,9 +366,39 @@ host_key_checking=False
 pipelining=True
 forks=100
 ```
+:warning: Nota:
+>Esta configuração não foi realizada na instalação
+
+## 3. Scripts para automatizar parte dos processos
+
+Os scripts a seguir foram escritos para automatizar ao máximo o processo de instalação.
+
+- *1-install-common-all-nodes-victoria.sh*
+- *2-install-controller-victoria.sh*
+
+### 3.1 Script *1-install-common-all-nodes-victoria.sh*
+Este script realiza os procedimentos comuns a todos nós, exceto os itens 1.1 (atualização do SO) e 1.7 (configuração da interface da rede *provider*).  
+
+A configuração da interface de rede *provider* pode ser feita após a execução do script, e em seguida o host deve ser reiniciado.
+
+Caso os IPs e *hostnames* sejam diferentes, alterar as seguintes variáveis no início do script.
+
+```bash
+## AJUSTAR HOSTS E IPs CONFORME NECESSÁRIO
+CONTROLLER_HOSTNAME="openstack-controller"
+CONTROLLER_IP="192.168.0.200"
+
+COMPUTE01_HOSTNAME="openstack-compute01" 
+COMPUTE01_IP="192.168.0.201"
+```
+
+### 3.2 Script *2-install-controller-victoria.sh*
+Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os item 2.1 ao 2.6, e o item 2.12
+
+Deve ser executado após o script *1-install-common-all-nodes-victoria.sh*.
 
 
-## 3. Para adicionar outros Nós de Computação
+## 4. Para adicionar outros Nós de Computação
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
 
@@ -390,31 +420,3 @@ cd /root
 cd ./kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
 ```
-
-## 4. Scripts para automatizar parte dos processos
-
-Os scripts a seguir foram escritos para automatizar ao máximo o processo de instalação.
-
-- *1-install-common-all-nodes-victoria.sh*
-- *2-install-controller-victoria.sh*
-
-### 4.1 Script *1-install-common-all-nodes-victoria.sh*
-Este script realiza os procedimentos comuns a todos nós, exceto os itens 1.1 (atualização do SO) e 1.7 (configuração da interface da rede *provider*).  
-
-A configuração da interface de rede *provider* pode ser feita após a execução do script, e em seguida o host deve ser reiniciado.
-
-Caso os IPs e *hostnames* sejam diferentes, alterar as seguintes variáveis no início do script.
-
-```bash
-## AJUSTAR HOSTS E IPs CONFORME NECESSÁRIO
-CONTROLLER_HOSTNAME="openstack-controller"
-CONTROLLER_IP="192.168.0.200"
-
-COMPUTE01_HOSTNAME="openstack-compute01" 
-COMPUTE01_IP="192.168.0.201"
-```
-
-### 4.2 Script *2-install-controller-victoria.sh*
-Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os item 2.1 ao 2.6, e o item 2.12
-
-Deve ser executado após o script *1-install-common-all-nodes-victoria.sh*.
