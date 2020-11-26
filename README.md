@@ -438,7 +438,7 @@ A rede provider deve ter os seguintes parâmetros:
 - Provider Network Type: `Flat`  
 - Physical Network: `physnet1`
     
-`physnet1` é o nome padrão das redes do tipo *flat* que o Kolla-Ansible cria no Neutron. Esse parâmetro pode ser encontrado no arquivo `/etc/kolla/neutron-server/ml2_conf.ini`: 
+`physnet1` é o nome padrão para as redes do tipo *flat* que o Kolla-Ansible cria no Neutron. Esse parâmetro pode ser encontrado no arquivo `/etc/kolla/neutron-server/ml2_conf.ini`: 
 ```bash
 [ml2_type_flat]
 flat_networks = physnet1
