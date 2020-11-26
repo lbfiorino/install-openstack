@@ -460,7 +460,7 @@ Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DH
 
 As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos.  
 
-Ao criar uma rede dentro do projeto, não é exibida a opção  `Provider Network Type`. Por padrão a rede é criada do tipo `VXLAN`, e OpenStack atribui automaticante o `Segmentation ID`.
+Ao criar uma rede dentro do projeto, não é exibida a opção  `Provider Network Type`. Por padrão a rede é criada do tipo `VXLAN`, e o OpenStack atribui automaticante o `Segmentation ID`.
 
 ![Private-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-network.png)
 
