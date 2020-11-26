@@ -470,5 +470,10 @@ Ao criar uma rede dentro do projeto, não é exibida a opção  `Provider Networ
 ![Private-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-subnet-details.png)
 
 
+## 6. Roteadores e Instâncias
+Com as redes criadas, é preciso criar um roteador para permitir a comunicação entre as redes.  
+
+Posteriormente pode-se criar as instâncias (máquinas virtuais).
+
 ## 7. Grupos de Segurança
 A instalação cria apenas um grupo de segurança com o nome `default`. Este grupo possiu regras apenas para tráfego de saída das máquinas virtuais.
