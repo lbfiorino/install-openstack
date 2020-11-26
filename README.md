@@ -16,7 +16,9 @@ OpenStack Release: **Victoria**
 - 40GB Espaço em disco
 
 ## Sistema Operacional
-- CentOS 8 (instalação mínima)
+- CentOS 8 
+    - Instalação mínima
+    - Release 8.2.2004 utilizada no momento da instalação
 - Sistema de arquivos XFS
 
 
