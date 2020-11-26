@@ -446,26 +446,26 @@ flat_networks = physnet1
 :warning: Nota:
 > Caso o Horizon não crie a rede informando todas as informações das abas (*Network*, *Subnet*, *Subnet Details*), desmarque a opção `Create Subnet` e crie a subnet depois.
 
-![Provider-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-rede-provider.png)
+![Provider-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-network.png)
 
 
-![Provider-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider.png)
+![Provider-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet.png)
 
-Na subnet, O parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer Floating IPs. O Floating IPs funciona mesmo com o DHCP desabilitado.
+Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer Floating IPs. O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o *range* de IPs.
 
-![Provider-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider-details.png)
+![Provider-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet-details.png)
 
 
 ### 5.2 Redes privadas
 
-As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos, da seguinte forma.
+As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos.  
 
-![Private-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-rede-provider.png)
+Ao criar uma rede dentro do projeto, não é exibida a opção  *'Provider Network Type'*. Por padrão a rede é criada do tipo `VXLAN`, e OpenStack atribui automaticante o *'Segmentation ID'*.
+
+![Private-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-network.png)
 
 
-![Private-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider.png)
+![Private-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-subnet.png)
 
-Na subnet, O parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer Floating IPs. O Floating IPs funciona mesmo com o DHCP desabilitado.
-
-![Private-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider-details.png)
+![Private-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-subnet-details.png)
 
