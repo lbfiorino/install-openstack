@@ -314,13 +314,12 @@ enable_redis: "yes"
 
 
 ### 2.10 Checar a configuração do multinode com o ansible
-	ansible -i multinode all -m ping
+	ansible -i /root/multinode all -m ping
 
 
 ### 2.11 Revisão da configuração do kolla-ansible e deploy
 Foram usados os comandos para *development*.
 ```bash
-
 # For development:
 cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode bootstrap-servers
@@ -328,26 +327,30 @@ cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode pull
 ./kolla-ansible -i ../../multinode deploy
 
+# OU
+
 # For deployment or evaluation:
-cd /root
-kolla-ansible -i multinode bootstrap-servers
-kolla-ansible -i multinode prechecks
-kolla-ansible -i multinode pull
-kolla-ansible -i multinode deploy
+#cd /root
+#kolla-ansible -i multinode bootstrap-servers
+#kolla-ansible -i multinode prechecks
+#kolla-ansible -i multinode pull
+#kolla-ansible -i multinode deploy
 ```
 
 
 ### 2.12 Instalar os clientes do OpenStack
 Os clientes foram instalados via Python.
 ```bash
+# Do Python PyPI
+pip3 install python-openstackclient
+pip3 install gnocchiclient
+
+# OU
+
 # Do repositório CentOS
 #dnf install -y centos-release-openstack-victoria
 #dnf upgrade -y
 #dnf install -y python-openstackclient
-
-# Ou do Python PyPI
-pip3 install python-openstackclient
-pip3 install gnocchiclient
 ```
 
 ### 2.13 Acessar o Horizon
