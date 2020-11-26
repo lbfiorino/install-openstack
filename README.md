@@ -245,7 +245,7 @@ Copiar os arquivos:
 ```bash
 cd /root
 
-# Copia arquivo para /etc/kolla/globals.yaml
+# Copia arquivo globals.yaml para /etc/kolla/globals.yaml
 cp -r ./kolla-ansible/etc/kolla /etc/kolla/
 
 # Copia os arquivos de inventário (all-in-one, multinode) na raiz do diretório /root

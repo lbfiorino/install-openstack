@@ -42,9 +42,9 @@ sudo -H -u stack bash -c 'ssh-keygen; ssh-copy-id stack@openstack-controller; ss
 
 # 2.4 CONFIGURAÇÃO DO INVENTÁRIO DO KOLLA
 cd /root
-# Copia arquivo /etc/kolla/globals.yaml
+# Copia arquivo globals.yaml para /etc/kolla/globals.yaml
 cp -r ./kolla-ansible/etc/kolla /etc/kolla/
-# Copia os arquivos ./all-in-one  e ./multinode na raiz do diretório /root
+# Copia os arquivos de inventário (all-in-one, multinode) na raiz do diretório /root
 cp ~/kolla-ansible/ansible/inventory/* .
 
 
@@ -66,14 +66,14 @@ EOF
 
 
 # 2.12 INSTALA OS CLIENTES DO OPENSTACK
-# Do repositorio CentOS
+# Do Python PyPI
+pip3 install python-openstackclient
+pip3 install gnocchiclient
+# OU
+# Do repositório CentOS
 #dnf install -y centos-release-openstack-victoria
 #dnf upgrade -y
 #dnf install -y python-openstackclient
-
-# Ou do PyPI
-pip3 install python-openstackclient
-pip3 install gnocchiclient
 
 
 
