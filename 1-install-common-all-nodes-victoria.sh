@@ -8,12 +8,16 @@
 #
 #--------------------------------------------------------------------------------
 
-## AJUSTAR HOSTS E IPs CONFORME NECESSÁRIO
+##### AJUSTAR OS HOSTS E IPs CONFORME NECESSÁRIO #####
+
 CONTROLLER_HOSTNAME="openstack-controller"
 CONTROLLER_IP="192.168.0.200"
 
 COMPUTE01_HOSTNAME="openstack-compute01" 
 COMPUTE01_IP="192.168.0.201"
+
+
+#--------------------------------------------------------------------------------
 
 # 1.2 REQUISITOS BASICOS
 

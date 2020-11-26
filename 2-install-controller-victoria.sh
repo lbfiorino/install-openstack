@@ -84,7 +84,7 @@ echo "
 PROXIMOS PASSOS NO CONTROLADOR:
 
 2.7 Alterar as senhas necessárias no arquivo /etc/kolla/passwords.yml
-        keystone_admin_password: senha-desejada
+        keystone_admin_password: senha
 
 
 2.8 Configurar o arquivo /etc/kolla/globals.yml
@@ -103,7 +103,7 @@ PROXIMOS PASSOS NO CONTROLADOR:
         enable_redis: \"yes\"
 
 
-        Nota:
+        NOTA:
 
         Em ambiente virtualizado mudar o tipo de virtualização para QEMU:
         
@@ -130,7 +130,7 @@ PROXIMOS PASSOS NO CONTROLADOR:
 
 2.10 Checar a configuração do multinode com o ansible
 
-	ansible -i multinode all -m ping
+	ansible -i /root/multinode all -m ping
 
 
 2.11 Revisão da configuração do kolla-ansible e deploy
@@ -141,14 +141,6 @@ PROXIMOS PASSOS NO CONTROLADOR:
 	./kolla-ansible -i ../../multinode prechecks
 	./kolla-ansible -i ../../multinode pull
 	./kolla-ansible -i ../../multinode deploy
-
-
-	Para Deployment:
-	cd /root
-	kolla-ansible -i multinode bootstrap-servers
-	kolla-ansible -i multinode prechecks
-	kolla-ansible -i multinode pull
-	kolla-ansible -i multinode deploy
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 "
