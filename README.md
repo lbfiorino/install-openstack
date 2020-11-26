@@ -479,6 +479,4 @@ A instalação cria apenas um grupo de segurança com o nome `default`. Este gru
 
 ## 8. IPs Flutuantes
 
-Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer os `Floating IPs`.  
-
-O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
+Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer os `Floating IPs`. O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
