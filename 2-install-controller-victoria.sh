@@ -42,7 +42,7 @@ sudo -H -u stack bash -c 'ssh-keygen; ssh-copy-id stack@openstack-controller; ss
 
 # 2.4 CONFIGURAÇÃO DO INVENTÁRIO DO KOLLA
 cd /root
-# Copia arquivo globals.yaml para /etc/kolla/globals.yaml
+# Copia os arquivos globals.yml e passwords.yml para /etc/kolla/
 cp -r ./kolla-ansible/etc/kolla /etc/kolla/
 # Copia os arquivos de inventário (all-in-one, multinode) na raiz do diretório /root
 cp ~/kolla-ansible/ansible/inventory/* .

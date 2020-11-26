@@ -238,14 +238,15 @@ exit
 ```
 
 
-### 2.4 Configuração do inventário do kolla
+### 2.4 Configuração do kolla
 Copiar os arquivos:
-- *globals.yaml* para */etc/kolla/globals.yaml*
+- *globals.yml* para */etc/kolla/globals.yml*
+- *passwords.yml* para */etc/kolla/passwords.yml*
 - *multinode* para */root/*
 ```bash
 cd /root
 
-# Copia arquivo globals.yaml para /etc/kolla/globals.yaml
+# Copia os arquivos globals.yml e passwords.yml para /etc/kolla/
 cp -r ./kolla-ansible/etc/kolla /etc/kolla/
 
 # Copia os arquivos de inventário (all-in-one, multinode) na raiz do diretório /root
