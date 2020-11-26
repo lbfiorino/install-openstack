@@ -59,7 +59,7 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 
 -  **Diagrama da rede no ambiente virtual:**
 
-![Infraestrutura](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/infra-virtual.svg)
+![Infraestrutura-Virtual](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/infra-virtual.svg)
 
 :warning: Notas:
 >- No VirtualBox, configurar o Modo Promíscuo nas interfaces de rede das VMs para "Permitir Tudo".
@@ -428,3 +428,44 @@ cd /root
 cd ./kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
 ```
+
+## 5. Criação das redes no Horizon
+
+### 5.1 Rede provider
+Apenas administradores podem criar redes provider.
+A rede provider deve ter os seguintes parâmetros:  
+
+- Provider Network Type: `Flat`  
+- Physical Network: `physnet1`
+    
+`physnet1` é o nome padrão das redes do tipo *flat* que o Kolla-Ansible cria no Neutron. Esse parâmetro pode ser encontrado no arquivo `/etc/kolla/neutron-server/ml2_conf.ini`: 
+```bash
+[ml2_type_flat]
+flat_networks = physnet1
+```
+:warning: Nota:
+> Caso o Horizon não crie a rede informando todas as informações das abas (*Network*, *Subnet*, *Subnet Details*), desmarque a opção `Create Subnet` e crie a subnet depois.
+
+![Provider-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-rede-provider.png)
+
+
+![Provider-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider.png)
+
+Na subnet, O parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer Floating IPs. O Floating IPs funciona mesmo com o DHCP desabilitado.
+
+![Provider-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider-details.png)
+
+
+### 5.2 Redes privadas
+
+As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos, da seguinte forma.
+
+![Private-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-rede-provider.png)
+
+
+![Private-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider.png)
+
+Na subnet, O parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer Floating IPs. O Floating IPs funciona mesmo com o DHCP desabilitado.
+
+![Private-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-subnet-provider-details.png)
+
