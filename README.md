@@ -451,7 +451,7 @@ flat_networks = physnet1
 
 ![Provider-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet.png)
 
-Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer Floating IPs. O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o *range* de IPs.
+Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer Floating IPs. O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
 
 ![Provider-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet-details.png)
 
