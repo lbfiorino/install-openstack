@@ -529,7 +529,6 @@ O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range 
 >
 >- Não foi realizado teste de acesso a API por HTTPS.
 
-&nbsp;
  
 Para habilitar TLS, configurar os parâmetros abaixo no `globals.yml`:
 
