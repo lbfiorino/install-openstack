@@ -516,3 +516,44 @@ A instalação cria apenas um grupo de segurança com o nome `default`. Este gru
 Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer os `Floating IPs`.  
 
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
+
+### 9. TLS
+[Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
+
+:warning: Limitações:
+>- Esta configuração foi feita apenas em **caráter de TESTE**.
+>
+>- O Kolla-Ansible gerou o certificado self-signed com validade de 01 (um) ano apenas.
+>
+>- Configuração exclusiva para ambientes de desenvolvimento. Em produção não utilizar certificado self-signed.
+>
+>- Não foi realizado teste de acesso a API por HTTPS.
+
+Para habilitar HTTPS, configurar os parâmetros abaixo no `globals.yml`:
+
+```bash
+kolla_enable_tls_internal: "yes"
+kolla_enable_tls_external: "{{ kolla_enable_tls_internal if kolla_same_external_internal_vip | bool else 'no' }}"
+kolla_copy_ca_into_containers: "yes"
+
+#If deploying on Debian or Ubuntu:
+#openstack_cacert: "/etc/ssl/certs/ca-certificates.crt"
+
+#If on CentOS or RHEL:
+openstack_cacert: "/etc/pki/tls/certs/ca-bundle.crt"
+
+kolla_enable_tls_backend: "yes"
+# Não verifica o certificado self-signed
+kolla_verify_tls_backend: "no"
+```
+
+Ececutar os seguintes comandos:
+```bash
+cd /root/kolla-ansible/tools/
+
+# Gera o certificado self-signed
+./kolla-ansible -i ../../multinode certificates
+
+# Reconfigura o ambiente
+./kolla-ansible -i ../../multinode reconfigure
+```
