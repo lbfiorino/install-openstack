@@ -4,11 +4,10 @@ OpenStack Release: **Victoria**
 
 [Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/)
 
-## Limitações
-- A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
- 
-- Acesso a API por HTTP. Requer estudos e testes para habilitar HTTPS.
-
+::warning ## Limitações
+>- A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
+> 
+>- Acesso a API por HTTP.
 
 ## Requisitos mínimos de hardware
 - 2 Interfaces de rede
