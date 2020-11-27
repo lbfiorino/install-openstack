@@ -163,7 +163,6 @@ Adicionar a linha abaixo no final do arquivo */etc/sudoers*
 stack	ALL=(ALL) ALL
 ```
 
-
 ### 1.10 Instalar Ansible na versão 2.9
 ```bash
 cd /root
@@ -499,7 +498,7 @@ Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DH
 
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
 
-## 8. Para adicionar outros Nós de Computação
+## 8. Adicionar outros Nós de Computação
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
 
