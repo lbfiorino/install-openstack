@@ -480,6 +480,8 @@ ovs-vsctl show
 :warning: Nota:
 > Caso o Horizon não crie a rede informando todas as informações das abas (*Network*, *Subnet*, *Subnet Details*), desmarque a opção `Create Subnet` e crie a subnet depois.
 
+Capturas de tela:
+
 ![Provider-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-network.png)
 
 
@@ -493,6 +495,8 @@ ovs-vsctl show
 As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos.  
 
 Ao criar uma rede dentro do projeto, não é exibida a opção  `Provider Network Type`. Por padrão a rede é criada do tipo `VXLAN`, e o OpenStack atribui automaticante o `Segmentation ID`.
+
+Capturas de tela:
 
 ![Private-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-network.png)
 
