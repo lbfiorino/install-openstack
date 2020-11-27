@@ -443,6 +443,38 @@ A rede provider deve ter os seguintes parâmetros:
 [ml2_type_flat]
 flat_networks = physnet1
 ```
+O mapeamento da `physnet1` para a `br-ex` está no arquivo `/etc/kolla/neutron-openvswitch-agent/openvswitch_agent.ini`:
+```bash
+[ovs]
+bridge_mappings = physnet1:br-ex
+```
+
+Que por sua vez, a `br-ex` está conectada na interface `enp0s8` quando foi atribuída no `globals.yml` através do parâmetro `neutron_external_interface: "enp0s8"`
+
+A bridge `br-ex:enp0s8` está no openvswitch e pode ser verificada com os seguintes comandos:
+
+```bash
+docker exec -it openvswitch_vswitchd bash
+ovs-vsctl show
+```
+```bash
+    Bridge br-ex
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        datapath_type: system
+        Port phy-br-ex
+            Interface phy-br-ex
+                type: patch
+                options: {peer=int-br-ex}
+        Port br-ex
+            Interface br-ex
+                type: internal
+        Port enp0s8
+            Interface enp0s8
+```
+
+
 :warning: Nota:
 > Caso o Horizon não crie a rede informando todas as informações das abas (*Network*, *Subnet*, *Subnet Details*), desmarque a opção `Create Subnet` e crie a subnet depois.
 
