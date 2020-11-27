@@ -502,7 +502,7 @@ O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range 
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
 
-Host: `openstack-compute02`
+Host: **openstack-compute02**
 - Interface **enp0s3**: 192.168.0.202/24 (*Management*)  
 - Interface **enp0s8**: 192.168.254.202/24 (*Provider*)
 
