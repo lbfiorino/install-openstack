@@ -425,7 +425,7 @@ Passos:
     - */etc/ansible/hosts*
     - */root/multinode*
 
-Por fim, realizar o deploy no controlador com o usuário *root*.
+Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*.
 ```bash
 cd /root
 cd ./kolla-ansible/tools/
