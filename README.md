@@ -180,10 +180,11 @@ curl -sSL https://get.docker.io | bash
 ```
 
 
-### 1.12 Configuração do kolla e docker
+### 1.12 Configuração do Docker para o Kolla
 Criar o arquivo de configuração do kolla no systemd:
 ```bash
 mkdir -p /etc/systemd/system/docker.service.d
+
 tee /etc/systemd/system/docker.service.d/kolla.conf <<-'EOF'
 [Service]
 MountFlags=shared
