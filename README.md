@@ -4,7 +4,7 @@ OpenStack Release: **Victoria**
 
 [Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/)
 
-## :warning: Limitações
+## Limitações
 >- A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
 > 
 >- Acesso a API por HTTP.
@@ -523,7 +523,7 @@ O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range 
 ## 9. TLS
 [Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
 
-:warning: Limitações:
+:warning: Notas:
 >- Esta configuração foi feita apenas em **caráter de TESTE**.
 >
 >- O Kolla-Ansible gerou o certificado self-signed com validade de 01 (um) ano apenas.
