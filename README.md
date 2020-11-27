@@ -529,7 +529,9 @@ O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range 
 >
 >- Não foi realizado teste de acesso a API por HTTPS.
 
-Para habilitar HTTPS, configurar os parâmetros abaixo no `globals.yml`:
+&nbsp;
+ 
+Para habilitar TLS, configurar os parâmetros abaixo no `globals.yml`:
 
 ```bash
 kolla_enable_tls_internal: "yes"
@@ -547,7 +549,7 @@ kolla_enable_tls_backend: "yes"
 kolla_verify_tls_backend: "no"
 ```
 
-Ececutar os seguintes comandos:
+Executar os seguintes comandos:
 ```bash
 cd /root/kolla-ansible/tools/
 
