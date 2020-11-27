@@ -534,7 +534,7 @@ O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range 
 >- Não foi realizado teste de acesso a API por HTTPS.
 
  
-Para habilitar TLS, configurar os parâmetros abaixo no arquivo `/etc/kolla/globals.yml`:
+Para habilitar o TLS, configurar os parâmetros abaixo no arquivo `/etc/kolla/globals.yml`:
 
 ```bash
 kolla_enable_tls_internal: "yes"
