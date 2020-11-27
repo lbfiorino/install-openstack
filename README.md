@@ -412,7 +412,7 @@ Este script realiza alguns procedimentos específicos no host controlador. São 
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
 
-Host: **openstack-compute02**
+Host: `openstack-compute02`
 - Interface **enp0s3**: 192.168.0.202/24 (*Management*)  
 - Interface **enp0s8**: 192.168.254.202/24 (*Provider*)
 
@@ -420,16 +420,20 @@ Passos:
 
 - Seguir os procedimentos do **item 1**, comuns a todos os nós.
 
-- No controlador, exportar as chaves SSH (usuários *root* e *stack*) para o host *openstack-compute02.*, conforme o **item 2.3**
+- Adicionar o host `openstack-compute02` no `/etc/hosts` de todos os nós.
 
-- No controlador, adicionar o host *openstack-compute02* nos arquivos abaixo dentro da chave **[compute]**. **Itens 2.6 e 2.9** respectivamente.
+- No controlador, exportar as chaves SSH (usuários *root* e *stack*) para o host `openstack-compute02`, conforme o **item 2.3**
+
+- No controlador, adicionar o host `openstack-compute02` nos arquivos abaixo dentro da chave **[compute]**. **Itens 2.6 e 2.9** respectivamente.
     - */etc/ansible/hosts*
     - */root/multinode*
 
 Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*.
 ```bash
-cd /root
-cd ./kolla-ansible/tools/
+cd /root/kolla-ansible/tools/
+./kolla-ansible -i ../../multinode bootstrap-servers --limit openstack-compute02
+./kolla-ansible -i ../../multinode prechecks --limit openstack-compute02
+./kolla-ansible -i ../../multinode pull --limit openstack-compute02
 ./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
 ```
 
