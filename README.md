@@ -498,7 +498,7 @@ Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DH
 
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
 
-## 8. Adicionar outros Nós de Computação
+## 8. Adicionar um Nó de Computação
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
 
@@ -533,7 +533,7 @@ cd /root/kolla-ansible/tools/
 >- O Kolla tem o recurso de registro local do Docker para fazer cache das imagens, como mostra a [documentação multinode (Deploy a registry)](https://docs.openstack.org/kolla-ansible/victoria/user/multinode.html).  
 Porém, esse recurso **não foi utlizado**. Durante o `pull` as imagens foram baixadas novamente do Docker Hub.
 
-## 9. Remover um nó de computação
+## 9. Remover um Nó de Computação
 > `TODO`
 
 ## 10. TLS
