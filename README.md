@@ -293,9 +293,11 @@ enable_gnocchi: "yes"
 enable_neutron_provider_networks: "yes"
 enable_redis: "yes"
 ```
-:warning: Nota:
-> Em ambiente virtualizado mudar o tipo de virtualização para QEMU:  
->`nova_compute_virt_type: "qemu"`
+:warning: Notas:
+> - Em ambiente virtualizado mudar o tipo de virtualização para QEMU:  
+>`nova_compute_virt_type: "qemu"`  
+>
+> - O parâmetro `kolla_internal_vip_address` requer um **IP não utilizado** na rede. Este IP será o de acesso a API. O Kolla-Ansible não aceitou colocar o mesmo IP da interface interna.
 
 
 ### 2.9 Configurar o arquivo */root/multinode*
