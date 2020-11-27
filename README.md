@@ -408,44 +408,9 @@ Este script realiza alguns procedimentos específicos no host controlador. São 
 **Deve** ser executado após o script *1-install-common-all-nodes-victoria.sh*.
 
 
-## 4. Para adicionar outros Nós de Computação
+## 4. Criação das redes no Horizon
 
-Os nomes das interfaces de rede devem ser iguais aos demais nós.
-
-Host: `openstack-compute02`
-- Interface **enp0s3**: 192.168.0.202/24 (*Management*)  
-- Interface **enp0s8**: 192.168.254.202/24 (*Provider*)
-
-Passos: 
-
-- Seguir os procedimentos do **item 1**, comuns a todos os nós.
-
-- Adicionar o host `openstack-compute02` no `/etc/hosts` de todos os nós.
-
-- No controlador, exportar as chaves SSH (usuários *root* e *stack*) para o host `openstack-compute02`, conforme o **item 2.3**
-
-- No controlador, adicionar o host `openstack-compute02` nos arquivos abaixo dentro da chave **[compute]**. **Itens 2.6 e 2.9** respectivamente.
-    - */etc/ansible/hosts*
-    - */root/multinode*
-
-Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*. O parâmetro `--limit` executa o comando apenas para o host informado.
-```bash
-cd /root/kolla-ansible/tools/
-./kolla-ansible -i ../../multinode bootstrap-servers --limit openstack-compute02
-./kolla-ansible -i ../../multinode prechecks --limit openstack-compute02
-./kolla-ansible -i ../../multinode pull --limit openstack-compute02
-./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
-```
-
-::warning: Notas:
->- Ao adicionar um nó posteriormente, pode ser que este nó utilize imagens do Docker mais recentes do que as utilizadas no outros nós, pois ao executar o comando de `pull`, as imagens são novamente baixadas do Docker Hub. **Não é recomendado** executar versões diferentes nos nós.
->
->- O Kolla tem o recurso de registro local do Docker para fazer cache das imagens, como mostra a [documentação multinode (Deploy a registry)](https://docs.openstack.org/kolla-ansible/victoria/user/multinode.html).  
-Porém esse recurso **não foi utlizado**. Durante o `pull` as imagens foram baixadas novamente do Docker Hub.
-
-## 5. Criação das redes no Horizon
-
-### 5.1 Rede provider
+### 4.1 Rede provider
 Apenas administradores podem criar redes provider.
 A rede provider deve ter os seguintes parâmetros:  
 
@@ -502,7 +467,7 @@ Capturas de tela:
 
 ![Provider-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet-details.png)
 
-### 5.2 Redes privadas
+### 4.2 Redes privadas
 
 As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos.  
 
@@ -518,22 +483,60 @@ Capturas de tela:
 ![Private-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-subnet-details.png)
 
 
-## 6. Roteadores e Instâncias
+## 5. Roteadores e Instâncias
 Com as redes criadas, é preciso criar um roteador para permitir a comunicação entre as redes.  
 
 Posteriormente, pode-se criar as instâncias (máquinas virtuais).
 
-## 7. Grupos de Segurança
+## 6. Grupos de Segurança
 A instalação cria apenas um grupo de segurança com o nome `default`. Este grupo possiu regras apenas para tráfego de saída das máquinas virtuais.
 
 
-## 8. IPs Flutuantes
+## 7. IPs Flutuantes
 
 Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer os `Floating IPs`.  
 
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
 
-## 9. TLS
+## 8. Para adicionar outros Nós de Computação
+
+Os nomes das interfaces de rede devem ser iguais aos demais nós.
+
+Host: `openstack-compute02`
+- Interface **enp0s3**: 192.168.0.202/24 (*Management*)  
+- Interface **enp0s8**: 192.168.254.202/24 (*Provider*)
+
+Passos: 
+
+- Seguir os procedimentos do **item 1**, comuns a todos os nós.
+
+- Adicionar o host `openstack-compute02` no `/etc/hosts` de todos os nós.
+
+- No controlador, exportar as chaves SSH (usuários *root* e *stack*) para o host `openstack-compute02`, conforme o **item 2.3**
+
+- No controlador, adicionar o host `openstack-compute02` nos arquivos abaixo dentro da chave **[compute]**. **Itens 2.6 e 2.9** respectivamente.
+    - */etc/ansible/hosts*
+    - */root/multinode*
+
+Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*. O parâmetro `--limit` executa o comando apenas para o host informado.
+```bash
+cd /root/kolla-ansible/tools/
+./kolla-ansible -i ../../multinode bootstrap-servers --limit openstack-compute02
+./kolla-ansible -i ../../multinode prechecks --limit openstack-compute02
+./kolla-ansible -i ../../multinode pull --limit openstack-compute02
+./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
+```
+
+::warning: Notas:
+>- Ao adicionar um nó posteriormente, pode ser que este nó utilize imagens do Docker mais recentes do que as utilizadas no outros nós, pois ao executar o comando de `pull`, as imagens são novamente baixadas do Docker Hub. **Não é recomendado** executar versões diferentes nos nós.
+>
+>- O Kolla tem o recurso de registro local do Docker para fazer cache das imagens, como mostra a [documentação multinode (Deploy a registry)](https://docs.openstack.org/kolla-ansible/victoria/user/multinode.html).  
+Porém esse recurso **não foi utlizado**. Durante o `pull` as imagens foram baixadas novamente do Docker Hub.
+
+## 9. Remover um nó de computação
+> `TODO`
+
+## 10. TLS
 [Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
 
 :warning: Notas:
