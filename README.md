@@ -415,13 +415,15 @@ Host: **openstack-compute02**
 - Interface **enp0s3**: 192.168.0.202/24 (*Management*)  
 - Interface **enp0s8**: 192.168.254.202/24 (*Provider*)
 
-Seguir os procedimentos do item 1, comuns a todos os nós.
+Passos: 
 
-No controlador, exportar as chaves SSH (usuários *root* e *stack*) para o host *openstack-compute02.*, conforme o item 2.3
+- Seguir os procedimentos do **item 1**, comuns a todos os nós.
 
-No controlador, adicionar o host *openstack-compute02* nos arquivos abaixo dentro da chave **[compute]**. Itens 2.6 e 2.9 respectivamente.
-- */etc/ansible/hosts*
-- */root/multinode*
+- No controlador, exportar as chaves SSH (usuários *root* e *stack*) para o host *openstack-compute02.*, conforme o **item 2.3**
+
+- No controlador, adicionar o host *openstack-compute02* nos arquivos abaixo dentro da chave **[compute]**. **Itens 2.6 e 2.9** respectivamente.
+    - */etc/ansible/hosts*
+    - */root/multinode*
 
 Executar os comandos abaixo no controlador com o usuário *root*.
 ```bash
