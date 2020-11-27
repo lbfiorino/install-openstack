@@ -131,7 +131,7 @@ SELINUX=disabled
 # controller
 192.168.0.200           openstack-controller
 
-# compute01
+# compute
 192.168.0.201           openstack-compute01
 ```
 

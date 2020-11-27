@@ -58,7 +58,7 @@ echo -e "
 # controller
 $CONTROLLER_IP			$CONTROLLER_HOSTNAME
 
-# compute01
+# compute
 $COMPUTE01_IP			$COMPUTE01_HOSTNAME" >> /etc/hosts
 
 
