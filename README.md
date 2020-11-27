@@ -428,7 +428,7 @@ Passos:
     - */etc/ansible/hosts*
     - */root/multinode*
 
-Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*.
+Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*. O parâmetro `--limit` executa o comando apenas para o host informado.
 ```bash
 cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode bootstrap-servers --limit openstack-compute02
@@ -436,6 +436,12 @@ cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode pull --limit openstack-compute02
 ./kolla-ansible -i ../../multinode deploy --limit openstack-compute02
 ```
+
+::warning: Notas:
+>- Ao adicionar um nó posteriormente, pode ser que este nó utilize imagens do Docker mais recentes do que as utilizadas no outros nós, pois ao executar o comando de `pull`, as imagens são novamente baixadas do Docker Hub. Não é recomendado executar versões diferentes nos nós.
+>
+>- O Kolla tem o recurso de registro local do Docker para fazer cache das imagens, como mostra a [documentação multinode (Deploy a registry)](https://docs.openstack.org/kolla-ansible/victoria/user/multinode.html).  
+Porém esse recurso **não foi utlizado**. Durante o `pull` as imagens foram baixadas novamente do Docker Hub.
 
 ## 5. Criação das redes no Horizon
 
