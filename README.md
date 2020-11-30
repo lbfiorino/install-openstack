@@ -317,6 +317,8 @@ enable_redis: "yes"
 	[storage]
 	#storage01
 
+:warning: Nota:
+>A instalação não utilizou storage, por isso o host `storage01` foi comentado e o módulo cinder não foi instalado.
 
 ### 2.10 Checar a configuração do multinode com o ansible
 	ansible -i /root/multinode all -m ping
