@@ -278,6 +278,7 @@ keystone_admin_password: keystoneadmin
 
 
 ### 2.8 Configurar o arquivo */etc/kolla/globals.yml*
+No arquivo `/etc/kolla/globals.yml`, alterar os parâmetros abaixo.
 ```bash
 kolla_base_distro: "centos"
 kolla_install_type: "source"
@@ -463,6 +464,8 @@ ovs-vsctl show
 
 :warning: Nota:
 > Caso o Horizon não crie a rede informando todas as informações das abas (*Network*, *Subnet*, *Subnet Details*), desmarque a opção `Create Subnet` e crie a subnet depois.
+
+Para usuários sem privilégios de administrador possam utilizar a rede provider, é necessário marcar a opção `Shared`.
 
 Capturas de tela:
 
