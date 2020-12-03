@@ -239,9 +239,9 @@ exit
 
 ### 2.4 Configuração do kolla
 Copiar os arquivos:
-- *globals.yml* para */etc/kolla/globals.yml*
-- *passwords.yml* para */etc/kolla/passwords.yml*
-- *multinode* para */root/*
+- `globals.yml` para `/etc/kolla/globals.yml`
+- `passwords.yml` para `/etc/kolla/passwords.yml`
+- `multinode` para `/root/`
 ```bash
 cd /root
 
