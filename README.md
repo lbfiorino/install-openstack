@@ -392,8 +392,8 @@ A documentação dos parâmentros pode ser encontrada no [arquivo de exemplo do 
 
 Os scripts a seguir foram escritos para automatizar ao máximo o processo de instalação.
 
-- *1-install-common-all-nodes-victoria.sh*
-- *2-install-controller-victoria.sh*
+- `1-install-common-all-nodes-victoria.sh`
+- `2-install-controller-victoria.sh`
 
 ### 3.1 Script *1-install-common-all-nodes-victoria.sh* (para todos os nós)
 Este script realiza os procedimentos comuns a todos nós, **exceto** os itens **1.1** (atualização do SO) e **1.7** (configuração da interface da rede *provider*), pois são processos que necessitam de reinicialização na máquina
@@ -526,8 +526,8 @@ Passos:
 - No controlador, exportar as chaves SSH (usuários *root* e *stack*) para o host `openstack-compute02`, conforme o **item 2.3**
 
 - No controlador, adicionar o host `openstack-compute02` nos arquivos abaixo dentro da chave **[compute]**. **Itens 2.6 e 2.9** respectivamente.
-    - */etc/ansible/hosts*
-    - */root/multinode*
+    - `/etc/ansible/hosts`
+    - `/root/multinode`
 
 Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*. O parâmetro `--limit` executa o comando apenas para o host informado.
 ```bash
