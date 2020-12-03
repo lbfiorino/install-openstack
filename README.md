@@ -463,9 +463,10 @@ ovs-vsctl show
 
 
 :warning: Nota:
-> Caso o Horizon não crie a rede informando todas as informações das abas (*Network*, *Subnet*, *Subnet Details*), desmarque a opção `Create Subnet` e crie a subnet depois.
+>- Para usuários sem privilégios de administrador possam utilizar a rede provider, é necessário marcar a opção `Shared`.
+>
+>- Caso o Horizon não crie a rede informando todas as informações das abas (*Network*, *Subnet*, *Subnet Details*), desmarque a opção `Create Subnet` e crie a subnet depois.
 
-Para usuários sem privilégios de administrador possam utilizar a rede provider, é necessário marcar a opção `Shared`.
 
 Capturas de tela:
 
