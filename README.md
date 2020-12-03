@@ -476,7 +476,7 @@ Capturas de tela:
 
 ### 4.2 Redes privadas
 
-As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos.  
+As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos (**Recomendado**).  
 
 Ao criar uma rede dentro do projeto, não é exibida a opção  `Provider Network Type`. Por padrão a rede é criada do tipo `VXLAN`, e o OpenStack atribui automaticante o `Segmentation ID`.
 
