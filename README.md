@@ -302,7 +302,7 @@ enable_redis: "yes"
 >- Os valores padrões dos outros parâmetros estão descritos nas linhas comentadas do arquivo.
 
 ### 2.9 Configurar o arquivo */root/multinode*
-Alterar os grupos de hosts abaixo. Os demais não são alterados.
+No arquivo `/root/multinode`, configurar os grupos de hosts conforme abaixo. Os demais não são alterados.
 
 	[control]
 	localhost
