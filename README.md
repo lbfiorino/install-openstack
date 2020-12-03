@@ -371,7 +371,7 @@ Usuário: `admin`
 ### 2.14 Tunning Ansible (Opcional)
 Para melhores resultados, realizar a seguinte configuração do Ansible antes do item 2.11 (verificação da configuração e *deploy*).
 
-Criar o arquivo */etc/ansible/ansible.cfg* com o conteúdo abaixo.
+Criar o arquivo `/etc/ansible/ansible.cfg` com o conteúdo abaixo.
 
 ```bash
 [defaults]
@@ -379,6 +379,8 @@ host_key_checking=False
 pipelining=True
 forks=100
 ```
+A documentação dos parâmentros pode ser encontrada no [arquivo de exemplo do ansible no github](https://github.com/ansible/ansible/blob/stable-2.9/examples/ansible.cfg).
+
 :warning: Nota:
 >Esta configuração não foi realizada na instalação
 
