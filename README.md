@@ -301,6 +301,7 @@ enable_redis: "yes"
 >- Os valores padrões dos outros parâmetros estão descritos nas linhas comentadas do arquivo.
 
 ### 2.9 Configurar o arquivo */root/multinode*
+Alterar os grupos de hosts abaixo. Os demais não são alterados.
 
 	[control]
 	localhost
@@ -325,7 +326,9 @@ enable_redis: "yes"
 
 
 ### 2.11 Revisão da configuração do kolla-ansible e deploy
-Foram usados os comandos para *development*.
+Foram usados os comandos para `development`.
+  
+Para melhores resultados, o item **2.14 Tunning Ansible** mostra alguns parâmetros de performance do Ansible, que devem ser configurados antes de executar os comandos abaixo.
 ```bash
 # For development:
 cd /root/kolla-ansible/tools/
@@ -369,7 +372,7 @@ Usuário: `admin`
 
 
 ### 2.14 Tunning Ansible (Opcional)
-Para melhores resultados, realizar a seguinte configuração do Ansible antes do item 2.11 (verificação da configuração e *deploy*).
+Para melhores resultados, realizar a seguinte configuração do Ansible antes do item 2.11 (revisão da configuração e *deploy*).
 
 Criar o arquivo `/etc/ansible/ansible.cfg` com o conteúdo abaixo.
 
@@ -382,7 +385,7 @@ forks=100
 A documentação dos parâmentros pode ser encontrada no [arquivo de exemplo do ansible no github](https://github.com/ansible/ansible/blob/stable-2.9/examples/ansible.cfg).
 
 :warning: Nota:
->Esta configuração não foi realizada na instalação
+>Esta configuração **não foi realizada** na instalação
 
 ## 3. Scripts para automatizar parte dos processos
 
