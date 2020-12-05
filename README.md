@@ -540,7 +540,10 @@ Passos:
     - `/root/multinode`
 
 Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*. O parâmetro `--limit` executa o comando apenas para o host informado.
+
+Assim como no item **2.11**, foram utilizados os comandos para `development`. 
 ```bash
+# For development:
 cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode bootstrap-servers --limit openstack-compute02
 ./kolla-ansible -i ../../multinode prechecks --limit openstack-compute02
