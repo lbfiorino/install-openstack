@@ -539,7 +539,7 @@ Passos:
     - `/etc/ansible/hosts`
     - `/root/multinode`
 
-Por fim, no controlador, realizar o deploy do nó de computação com o usuário *root*.
+Por fim, no controlador, realizar o deploy do nó de computação com o usuário `root`.
 
 Assim como no item **2.11**, foram utilizados os comandos para `development`. O parâmetro `--limit` executa o comando apenas para o host informado.
 ```bash
