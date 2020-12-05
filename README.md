@@ -601,3 +601,4 @@ cd /root/kolla-ansible/tools/
 # Reconfigura o ambiente
 ./kolla-ansible -i ../../multinode reconfigure
 ```
+
