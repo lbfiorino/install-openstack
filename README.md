@@ -61,7 +61,10 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 ![Infraestrutura-Virtual](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/infra-virtual.svg)
 
 :warning: Notas:
->- No VirtualBox, configurar o Modo Promíscuo nas interfaces de rede das VMs para "Permitir Tudo".
+>- No VirtualBox, configurar o Modo Promíscuo nas interfaces de rede das VMs para "Permitir Tudo". 
+>
+>- No Hyper-V é necessário habilitar a falsificação de endereço MAC (MAC Spoofing) nas interfaces das máquinas virtuais que estão na rede *provider*.
+>
 >- Em caso de problema no *pull* das imagens do docker, verificar o MTU da rede.
 
 
@@ -363,6 +366,9 @@ pip3 install gnocchiclient
 #dnf upgrade -y
 #dnf install -y python-openstackclient
 ```
+:warning: Nota:
+> - Para evitar conflitos, instalar todos os clientes a partir do mesmo repositório. Todos via python ou todos via dnf.
+> - Caso necessário, remover um cliente instalado de um repositório para reinstalar a partir de outro repositório.
 
 ### 2.13 Acessar o Horizon
 
@@ -509,7 +515,11 @@ Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DH
 
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
 
-## 8. Adicionar um Nó de Computação
+## 8. Ceilometer - Default Archive Policy
+
+> `TODO`
+
+## 9. Adicionar um Nó de Computação
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
 
@@ -544,10 +554,10 @@ cd /root/kolla-ansible/tools/
 >- O Kolla tem o recurso de registro local do Docker para fazer cache das imagens, como mostra a [documentação multinode (Deploy a registry)](https://docs.openstack.org/kolla-ansible/victoria/user/multinode.html).  
 Porém, esse recurso **não foi utlizado**. Durante o `pull` as imagens foram baixadas novamente do Docker Hub.
 
-## 9. Remover um Nó de Computação
+## 10. Remover um Nó de Computação
 > `TODO`
 
-## 10. TLS
+## 11. TLS
 [Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
 
 :warning: Notas:
