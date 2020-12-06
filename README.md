@@ -2,7 +2,7 @@
 
 OpenStack Release: **Victoria**
 
-[OpenStack Releases](https://releases.openstack.org/){:target="_blank"}
+[OpenStack Releases](https://releases.openstack.org/)
 
 [Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/)
 
