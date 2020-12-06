@@ -602,7 +602,30 @@ Porém, esse recurso **não foi utlizado**. Durante o `pull` as imagens foram ba
 ## 10. Remover um Nó de Computação
 > `TODO`
 
-## 11. TLS
+## 11. Atualizar as imagens docker dos módulos
+
+Para atualiar as imagens docker dos módulos do OpenStack, seguir os segintes passos.
+
+1. Parar os conteiners:
+    ```bash
+    # For development:
+    cd /root/kolla-ansible/tools/
+    ./kolla-ansible -i ../../multinode stop --yes-i-really-really-mean-it
+    ```
+1. Fazer o pull das imagens:
+    ```bash
+    ./kolla-ansible -i ../../multinode pull
+    ```
+1. Fazer o upgrade:
+     ```bash
+    ./kolla-ansible -i ../../multinode upgrade
+    ``` 
+1. Remover as imagens antigas:
+     ```bash
+    ./kolla-ansible -i ../../multinode prune-images --yes-i-really-really-mean-it
+    ``` 
+
+## 12. TLS
 [Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
 
 :warning: Notas:
