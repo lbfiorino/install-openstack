@@ -568,7 +568,7 @@ cd /root/kolla-ansible/tools/
 ```
 
 
-### 8.1 Ceilometer - Default Archive Policy
+### 8.1 Ceilometer / Gnocchi - Default Archive Policy
 
 Por padrão o a política de arquivo (*Archive Policy*) do Ceilometer é `low`. Para alterar a política para `high`, deve-se criar os arquivos de configuração `pipeline.yaml` e `polling.yaml` no diretório `/etc/kolla/config/ceilometer` seguindo os passos abaixo.
 
@@ -577,20 +577,29 @@ Por padrão o a política de arquivo (*Archive Policy*) do Ceilometer é `low`. 
     mkdir -p /etc/kolla/config/ceilometer
     ```
 
-- Criar o arquivo `pipeline.yaml`:  
+- Criar o arquivo `/etc/kolla/config/ceilometer/pipeline.yaml`:  
 Este arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/ceilometer/pipeline/data/pipeline.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
-Editar o arquivo e alterar o endereço do `publishers:` para:  
+Editar o arquivo e alterar o endereço do Gnocchi no `publishers:` para:  
     ```bash
     #- gnocchi://
     - gnocchi://?archive_policy=high
     ```
-- Criar o arquivo `polling.yaml`:  
+- Criar o arquivo `/etc/kolla/config/ceilometer/polling.yaml`:  
 Este arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/etc/ceilometer/polling.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
-Editar o arquivo e alterar o parâmetro do `interval:` para `1` segundo:  
+Editar o arquivo e alterar o parâmetro `interval:` para `1` segundo:  
     ```bash
     #interval: 300
     interval: 1
     ```
+
+Após a criação dos arquivos, realizar o *deploy* no item 2.11 ou, caso o OpenStack já esteja operacional, realizar a reconfiguração com o comando abaixo.
+```bash
+# For development:
+cd /root/kolla-ansible/tools/
+./kolla-ansible -i ../../multinode reconfigure
+```
+
+As métricas com *Archive Policy* `high` serão criadas para as novas instâncias. As instâncias existentes permanecerão com a política `low`.
 
 
 ## 9. Adicionar um Nó de Computação
