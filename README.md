@@ -1,8 +1,12 @@
-# Instalação do OpenStack com Kolla-Ansible
+# Instalação do OpenStack com Kolla-Ansible  :cloud:
 
 OpenStack Release: **Victoria**
 
 [Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/)
+
+[Kolla-Ansible Tips and Tricks](https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks)
+
+[Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)
   
 Diretórios do repositório:  
 - `arquivos-conf`- contém os arquivos de configuração utilizados na instalação
@@ -336,8 +340,11 @@ No arquivo `/root/multinode`, configurar os grupos de hosts conforme abaixo. Os 
 
 ### 2.11 Revisão da configuração do kolla-ansible e deploy
 Foram usados os comandos para `development`.
-  
+
 Para melhores resultados, o item **2.14 Tunning Ansible** mostra alguns parâmetros de performance do Ansible, que devem ser configurados antes de executar os comandos abaixo.
+
+:warning: **ATENÇÃO:** Caso seja necessário habilitar outros módulos, leia o **item 8** antes de realizar o *deploy*. 
+
 ```bash
 # For development:
 cd /root/kolla-ansible/tools/
@@ -355,7 +362,6 @@ cd /root/kolla-ansible/tools/
 #kolla-ansible -i multinode pull
 #kolla-ansible -i multinode deploy
 ```
-
 
 ### 2.12 Instalar os clientes do OpenStack
 Os clientes foram instalados via Python.
@@ -520,9 +526,37 @@ Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DH
 
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
 
-## 8. Ceilometer - Default Archive Policy
+## 8. Módulos
+Os módulos do OpenStack podem ser habilitados após o *deploy*, porém será baixada a imagem do docker mais recente do módulo para a release utilizada (neste caso Victoria).
+
+**É recomendado** habilitar e configurar todos os módulos necessários antes do *deploy* (item 2.11), a fim de evitar a utilização de imagens docker com versões muitos distantes uma das outras, o que pode ocasionar problemas de compatibilidade entre os módulos. 
+
+Para habilitar um módulo após o *deploy* do ambiente, basta descomentar a linha referente ao módulo no arquivo `/etc/kolla/globals.yml`, alterar o valor do parâmetro para `yes` e executar o comando para reconfigurar o ambiente. 
+
+**Exemplo:** Habilitar Grafana após o *deploy*.
+
+Editar o arquivo `/etc/kolla/globals.yml`:
+```bash
+#enable_grafana: "no"
+enable_grafana: "yes"
+```
+Em seguida executar o comando para reconfigurar o ambiente:
+```bash
+# For development:
+cd /root/kolla-ansible/tools/
+./kolla-ansible -i ../../multinode reconfigure
+```
+
+### 8.1 Ceilometer - Default Archive Policy
 
 > `TODO`
+
+Por padrão o a política de arquivo (*Archive Policy*) do Ceilometer é `low`. Para alterar a política para `high`, deve-se criar os seguintes arquivos de configuração no diretório `/etc/kolla/config/ceilometer`.
+
+- `pipeline.yaml`
+
+- `polling.yaml`
+
 
 ## 9. Adicionar um Nó de Computação
 
