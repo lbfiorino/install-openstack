@@ -570,7 +570,7 @@ cd /root/kolla-ansible/tools/
 
 ### 8.1 Ceilometer / Gnocchi - Default Archive Policy
 
-Por padrão o a política de arquivo (*Archive Policy*) do Ceilometer é `low`. Para alterar a política para `high`, deve-se criar os arquivos de configuração `pipeline.yaml` e `polling.yaml` no diretório `/etc/kolla/config/ceilometer` seguindo os passos abaixo.
+Por padrão o as políticas de arquivo (*Archive Policy*) criadas pelo Ceilometer no Gnocchi é `low`. Para alterar a política para `high`, deve-se criar os arquivos de configuração `pipeline.yaml` e `polling.yaml` no diretório `/etc/kolla/config/ceilometer` seguindo os passos abaixo.
 
 - Criar o diretório `/etc/kolla/config/ceilometer`:
     ```bash
