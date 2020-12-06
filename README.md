@@ -552,7 +552,7 @@ cd /root/kolla-ansible/tools/
 
 ### 8.1 Ceilometer - Default Archive Policy
 
-> `TODO`
+> :warning: **Em construção**
 
 Por padrão o a política de arquivo (*Archive Policy*) do Ceilometer é `low`. Para alterar a política para `high`, deve-se criar os seguintes arquivos de configuração no diretório `/etc/kolla/config/ceilometer`.
 
