@@ -1,6 +1,6 @@
 # Instalação do OpenStack com Kolla-Ansible  :cloud:
 
-### OpenStack Release: **Victoria**
+### OpenStack Release: Victoria
 
 [OpenStack Releases](https://releases.openstack.org/)
 
