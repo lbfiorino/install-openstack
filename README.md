@@ -584,6 +584,8 @@ Editar o arquivo e alterar o endereço do Gnocchi no `publishers:` para:
     #- gnocchi://
     - gnocchi://?archive_policy=high
     ```
+     O parâmetro `archive_policy=high` foi adicionado a partir da release Rocky, podendo ser verificado [neste link](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#relnotes-11-0-0-stable-rocky-upgrade-notes)
+
 - Criar o arquivo `/etc/kolla/config/ceilometer/polling.yaml`:  
 Este arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/etc/ceilometer/polling.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
 Editar o arquivo e alterar o parâmetro `interval:` para `1` segundo:  
