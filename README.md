@@ -2,13 +2,13 @@
 
 OpenStack Release: **Victoria**
 
-<a href="https://releases.openstack.org/" target="_blank">OpenStack Releases</a>
+[OpenStack Releases](https://releases.openstack.org/)
 
-<a href="https://docs.openstack.org/kolla-ansible/victoria/" target="_blank">Documentação Kolla-Ansible</a>
+[Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/)
 
-<a href="https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks" target="_blank">Kolla-Ansible Tips and Tricks</a>
+[Kolla-Ansible Tips and Tricks](https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks)
 
-<a href="https://docs.openstack.org/releasenotes/ceilometer/" target="_blank">Ceilometer Release Notes</a>
+[Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)
 
 
 Diretórios do repositório:  
