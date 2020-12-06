@@ -464,21 +464,22 @@ A bridge `br-ex:enp0s8` está no openvswitch e pode ser verificada com os seguin
 docker exec -it openvswitch_vswitchd bash
 ovs-vsctl show
 ```
+Bridge `br-ex` exibida pelo comando `ovs-vsctl show`:
 ```bash
-    Bridge br-ex
-        Controller "tcp:127.0.0.1:6633"
-            is_connected: true
-        fail_mode: secure
-        datapath_type: system
-        Port phy-br-ex
-            Interface phy-br-ex
-                type: patch
-                options: {peer=int-br-ex}
-        Port br-ex
-            Interface br-ex
-                type: internal
-        Port enp0s8
-            Interface enp0s8
+Bridge br-ex
+    Controller "tcp:127.0.0.1:6633"
+        is_connected: true
+    fail_mode: secure
+    datapath_type: system
+    Port phy-br-ex
+        Interface phy-br-ex
+            type: patch
+            options: {peer=int-br-ex}
+    Port br-ex
+        Interface br-ex
+            type: internal
+    Port enp0s8
+        Interface enp0s8
 ```
 
 
@@ -552,14 +553,27 @@ cd /root/kolla-ansible/tools/
 
 ### 8.1 Ceilometer - Default Archive Policy
 
-> :warning: **Em construção**
+Por padrão o a política de arquivo (*Archive Policy*) do Ceilometer é `low`. Para alterar a política para `high`, deve-se criar os arquivos de configuração `pipeline.yaml` e `polling.yaml` no diretório `/etc/kolla/config/ceilometer` seguindo os passos abaixo.
 
-Por padrão o a política de arquivo (*Archive Policy*) do Ceilometer é `low`. Para alterar a política para `high`, deve-se criar os seguintes arquivos de configuração no diretório `/etc/kolla/config/ceilometer`.
+- Criar o diretório `/etc/kolla/config/ceilometer`:
+    ```bash
+    mkdir -p /etc/kolla/config/ceilometer
+    ```
 
-- `pipeline.yaml`
-
-- `polling.yaml`
-
+- Criar o arquivo `pipeline.yaml`:  
+Este arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/ceilometer/pipeline/data/pipeline.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
+Editar o arquivo e alterar o endereço do `publishers:` para:  
+    ```bash
+    #- gnocchi://
+    - gnocchi://?archive_policy=high
+    ```
+- Criar o arquivo `polling.yaml`:  
+Este arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/etc/ceilometer/polling.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
+Editar o arquivo e alterar o parâmetro do `interval:` para `1` segundo:  
+    ```bash
+    #interval: 300
+    interval: 1
+    ```
 
 ## 9. Adicionar um Nó de Computação
 
@@ -570,6 +584,7 @@ Host: **openstack-compute02**
 - Interface **enp0s8**: 192.168.254.202/24 (*Provider*)
 
 Passos: 
+
 
 - Seguir os procedimentos do **item 1**, comuns a todos os nós.
 
