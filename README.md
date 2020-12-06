@@ -21,10 +21,12 @@ Diretórios do repositório:
 
 - Acesso a API por HTTP.
 
+
 ## Requisitos mínimos de hardware
 - 2 Interfaces de rede
 - 8GB Memória RAM
 - 40GB Espaço em disco
+
 
 ## Sistema Operacional
 - CentOS 8 
@@ -83,6 +85,7 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 ## 1. Procedimentos comuns a TODOS OS NÓS
 :warning: Nota:
 > Todo o processo de instalação teve como base o usuário *root* e o diretório */root/*
+
 
 ### 1.1 Atualizar o sistema operacional
 
@@ -214,6 +217,7 @@ systemctl enable docker
 :warning: Nota:
 > Novamente, todo o processo de instalação teve como base o usuário *root* e o diretório */root/*
 
+
 ### 2.1 Instalar Kolla
 ```bash
 cd /root
@@ -285,6 +289,7 @@ openstack-controller
 openstack-compute01
 ```
 
+
 ### 2.7 Alterar as senhas necessárias no arquivo */etc/kolla/passwords.yml*
 ```bash
 # Senha do usuário admin para acesso ao Horizon
@@ -316,6 +321,7 @@ enable_redis: "yes"
 >
 >- Os valores padrões dos outros parâmetros estão descritos nas linhas comentadas do arquivo.
 
+
 ### 2.9 Configurar o arquivo */root/multinode*
 No arquivo `/root/multinode`, configurar os grupos de hosts conforme abaixo. Os demais não são alterados.
 
@@ -336,6 +342,7 @@ No arquivo `/root/multinode`, configurar os grupos de hosts conforme abaixo. Os 
 
 :warning: Nota:
 >A instalação não utilizou storage, por isso o host `storage01` foi comentado e o módulo cinder não foi instalado.
+
 
 ### 2.10 Checar a configuração do multinode com o ansible
 	ansible -i /root/multinode all -m ping
@@ -366,6 +373,7 @@ cd /root/kolla-ansible/tools/
 #kolla-ansible -i multinode deploy
 ```
 
+
 ### 2.12 Instalar os clientes do OpenStack
 Os clientes foram instalados via Python.
 ```bash
@@ -383,6 +391,7 @@ pip3 install gnocchiclient
 :warning: Nota:
 > - Para evitar conflitos, instalar todos os clientes a partir do mesmo repositório. Todos via python ou todos via dnf.
 > - Caso necessário, remover um cliente instalado de um repositório para reinstalar a partir de outro repositório.
+
 
 ### 2.13 Acessar o Horizon
 
@@ -408,12 +417,14 @@ A documentação dos parâmentros pode ser encontrada no [arquivo de exemplo do 
 :warning: Nota:
 >Esta configuração **não foi realizada** na instalação
 
+
 ## 3. Scripts para automatizar parte dos processos
 
 Os scripts a seguir foram escritos para automatizar ao máximo o processo de instalação.
 
 - `1-install-common-all-nodes-victoria.sh`
 - `2-install-controller-victoria.sh`
+
 
 ### 3.1 Script *1-install-common-all-nodes-victoria.sh* (para todos os nós)
 Este script realiza os procedimentos comuns a todos nós, **exceto** os itens **1.1** (atualização do SO) e **1.7** (configuração da interface da rede *provider*), pois são processos que necessitam de reinicialização na máquina
@@ -430,6 +441,7 @@ COMPUTE01_HOSTNAME="openstack-compute01"
 COMPUTE01_IP="192.168.0.201"
 ```
 
+
 ### 3.2 Script *2-install-controller-victoria.sh* (para o controlador)
 Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os itens **2.1 ao 2.6**, e o item **2.12**.
 
@@ -437,6 +449,7 @@ Este script realiza alguns procedimentos específicos no host controlador. São 
 
 
 ## 4. Criação das redes no Horizon
+
 
 ### 4.1 Rede provider
 Apenas administradores podem criar redes provider.
@@ -499,6 +512,7 @@ Capturas de tela:
 
 ![Provider-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet-details.png)
 
+
 ### 4.2 Redes privadas
 
 As redes internas (privadas) podem ser criadas pelos usuários, dentro dos projetos (**Recomendado**).  
@@ -520,6 +534,7 @@ Com as redes criadas, é preciso criar um roteador para permitir a comunicação
 
 Posteriormente, pode-se criar as instâncias (máquinas virtuais).
 
+
 ## 6. Grupos de Segurança
 A instalação cria apenas um grupo de segurança com o nome `default`. Este grupo possiu regras apenas para tráfego de saída das máquinas virtuais.
 
@@ -529,6 +544,7 @@ A instalação cria apenas um grupo de segurança com o nome `default`. Este gru
 Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP e para fornecer os `Floating IPs`.  
 
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range de IPs.
+
 
 ## 8. Módulos
 Os módulos do OpenStack podem ser habilitados após o *deploy*, porém será baixada a imagem do docker mais recente do módulo para a release utilizada (neste caso Victoria).
@@ -550,6 +566,7 @@ Em seguida executar o comando para reconfigurar o ambiente:
 cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode reconfigure
 ```
+
 
 ### 8.1 Ceilometer - Default Archive Policy
 
@@ -574,6 +591,7 @@ Editar o arquivo e alterar o parâmetro do `interval:` para `1` segundo:
     #interval: 300
     interval: 1
     ```
+
 
 ## 9. Adicionar um Nó de Computação
 
@@ -614,8 +632,10 @@ cd /root/kolla-ansible/tools/
 >- O Kolla tem o recurso de registro local do Docker para fazer cache das imagens, como mostra a [documentação multinode (Deploy a registry)](https://docs.openstack.org/kolla-ansible/victoria/user/multinode.html).  
 Porém, esse recurso **não foi utlizado**. Durante o `pull` as imagens foram baixadas novamente do Docker Hub.
 
+
 ## 10. Remover um Nó de Computação
 > `TODO`
+
 
 ## 11. Atualizar as imagens docker da release instalada
 
@@ -682,6 +702,7 @@ cd /root/kolla-ansible/tools/
 # Reconfigura o ambiente
 ./kolla-ansible -i ../../multinode reconfigure
 ```
+
 
 ## 13. Upgrade de versão
 >`TODO`
