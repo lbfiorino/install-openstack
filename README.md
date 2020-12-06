@@ -2,14 +2,15 @@
 
 OpenStack Release: **Victoria**
 
-[OpenStack Releases](https://releases.openstack.org/)
+<a href="https://releases.openstack.org/" target="blank">OpenStack Releases</a>
 
-[Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/)
+<a href="https://docs.openstack.org/kolla-ansible/victoria/" target="blank">Documentação Kolla-Ansible</a>
 
-[Kolla-Ansible Tips and Tricks](https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks)
+<a href="https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks" target="blank">Kolla-Ansible Tips and Tricks</a>
 
-[Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)
-  
+<a href="https://docs.openstack.org/releasenotes/ceilometer/" target="blank">Ceilometer Release Notes</a>
+
+
 Diretórios do repositório:  
 - `arquivos-conf`- contém os arquivos de configuração utilizados na instalação
 - `imagens` - contém os diagramas de rede da documentação
