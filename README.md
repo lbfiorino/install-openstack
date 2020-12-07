@@ -587,11 +587,17 @@ Editar o arquivo e alterar o endereço do Gnocchi no `publishers:` para:
      O parâmetro `archive_policy=high` foi adicionado a partir da release Rocky, podendo ser verificado [neste link](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#relnotes-11-0-0-stable-rocky-upgrade-notes)
 
 - Criar o arquivo `/etc/kolla/config/ceilometer/polling.yaml`:  
-Este arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/etc/ceilometer/polling.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
+O conteúdo deste arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/etc/ceilometer/polling_all.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
 Editar o arquivo e alterar o parâmetro `interval:` para `1` segundo:  
     ```bash
-    #interval: 300
-    interval: 1
+    sources:
+        - name: all_pollsters
+          # Intervalo em segundos
+          #interval: 300
+          interval: 1
+          meters:
+            # "*" Todas as métricas
+            - "*"
     ```
 
 Após a criação dos arquivos, realizar o *deploy* no item 2.11 ou, caso o OpenStack já esteja operacional, realizar a reconfiguração com o comando abaixo.
