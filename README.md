@@ -426,7 +426,7 @@ Os scripts a seguir foram escritos para automatizar ao máximo o processo de ins
 - `2-install-controller-victoria.sh`
 
 
-### 3.1 Script *<u>1-install-common-all-nodes-victoria.sh</u>* (para todos os nós)
+### 3.1 Script `1-install-common-all-nodes-victoria.sh` (para todos os nós)
 Este script realiza os procedimentos comuns a todos nós, **exceto** os itens **1.1** (atualização do SO) e **1.7** (configuração da interface da rede *provider*), pois são processos que necessitam de reinicialização na máquina
 
 A configuração da interface de rede *provider* pode ser feita após a execução do script, e em seguida o host deve ser reiniciado.
