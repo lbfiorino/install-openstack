@@ -560,6 +560,11 @@ Editar o arquivo `/etc/kolla/globals.yml`:
 #enable_grafana: "no"
 enable_grafana: "yes"
 ```
+Definir a senha do grafana no arquivo `/etc/kolla/passwords.yml`:
+```bash
+grafana_admin_password: grafanaadmin
+```
+
 Em seguida executar o comando para reconfigurar o ambiente:
 ```bash
 # For development:
