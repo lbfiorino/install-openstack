@@ -597,15 +597,11 @@ Editar o arquivo e alterar o endereço do Gnocchi no `publishers:` para:
 O conteúdo deste arquivo pode ser obtido [neste link](https://github.com/openstack/ceilometer/blob/stable/victoria/etc/ceilometer/polling_all.yaml) ou no diretório `arquivos-conf/ceilometer/` deste repositório.   
 Editar o arquivo e alterar o parâmetro `interval:` para `1` segundo:  
     ```bash
-    ---
-    sources:
-        - name: all_pollsters
-          # Intervalo em segundos
-          #interval: 300
-          interval: 1
-          meters:
-            # "*" Todas as métricas
-            - "*"
+    ...
+    # Intervalo em segundos
+    #interval: 300
+    interval: 1
+    ...
     ```
 
 Após a criação dos arquivos, realizar o *deploy* no item 2.11 ou, caso o OpenStack já esteja operacional, realizar a reconfiguração com o comando abaixo.

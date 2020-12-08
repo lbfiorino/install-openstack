@@ -1,0 +1,9 @@
+---
+sources:
+    - name: all_pollsters
+      # Intervalo em segundos
+      #interval: 300
+      interval: 1
+      meters:
+        # "*" Todas as métricas
+        - "*"
