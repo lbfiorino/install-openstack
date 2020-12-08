@@ -8,6 +8,8 @@
 
 [Kolla-Ansible Tips and Tricks](https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks)
 
+[Ceilometer Telemetry Measurements](https://docs.openstack.org/ceilometer/victoria/admin/telemetry-measurements.html)
+
 [Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)
 
 
