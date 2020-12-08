@@ -384,22 +384,18 @@ cd /root/kolla-ansible/tools/
 
 
 ### 2.12 Instalar os clientes do OpenStack
-Os clientes foram instalados via Python.
+Os clientes foram instalados a partir do repositório RDO (http://mirror.centos.org/centos/8/cloud/x86_64/openstack-victoria/).
 ```bash
-# Do Python PyPI
-pip3 install python-openstackclient
-pip3 install gnocchiclient
+# Do repositório RDO
+dnf install -y https://www.rdoproject.org/repos/rdo-release.el8.rpm
 
-# OU
-
-# Do repositório CentOS
-#dnf install -y centos-release-openstack-victoria
-#dnf upgrade -y
-#dnf install -y python-openstackclient
+dnf install python3-openstackclient
+dnf install python3-gnocchiclient
 ```
 :warning: Nota:
-> - Para evitar conflitos, instalar todos os clientes a partir do mesmo repositório. Todos via python ou todos via dnf.
-> - Caso necessário, remover um cliente instalado de um repositório para reinstalar a partir de outro repositório.
+> - O cliente do Gnocchi instalado via PIP apresentou problemas. Retornou o erro *"Not Acceptable (406)"* para o comando `delete`.
+>
+> - Para evitar conflitos, instalar todos os clientes a partir do mesmo repositório.
 
 
 ### 2.13 Acessar o Horizon
