@@ -384,10 +384,10 @@ cd /root/kolla-ansible/tools/
 
 
 ### 2.12 Instalar os clientes do OpenStack
-Os clientes foram instalados a partir do repositório RDO (http://mirror.centos.org/centos/8/cloud/x86_64/openstack-victoria/).
+Os clientes foram instalados a partir do repositório RDO (https://www.rdoproject.org/repos/openstack/openstack-victoria/).
 ```bash
 # Do repositório RDO
-dnf install -y https://www.rdoproject.org/repos/rdo-release.el8.rpm
+dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm
 
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
