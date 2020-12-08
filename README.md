@@ -365,6 +365,11 @@ cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode pull
 ./kolla-ansible -i ../../multinode deploy
 
+# post-deployment smoke tests
+./kolla-ansible -i ../../multinode check 
+# get the admin openrc file (/etc/kolla/admin-openrc.sh)
+./kolla-ansible -i ../../multinode post-deploy
+
 # OU
 
 # For deployment or evaluation:
@@ -373,6 +378,8 @@ cd /root/kolla-ansible/tools/
 #kolla-ansible -i multinode prechecks
 #kolla-ansible -i multinode pull
 #kolla-ansible -i multinode deploy
+#kolla-ansible -i multinode check
+#kolla-ansible -i multinode post-deploy
 ```
 
 
@@ -727,3 +734,16 @@ cd /root/kolla-ansible/tools/
 
 ## 13. Upgrade de versão
 >`TODO`
+
+## 14. Destruir a nuvem
+
+:warning: **CUIDADO!**
+
+O comando abaixo remove os conteiners docker do OpenStack.  
+Após o comando de *destroy* é necessário um novo *deploy*.
+
+```bash
+ cd /root/kolla-ansible/tools/
+
+./kolla-ansible -i ../../multinode destroy --yes-i-really-really-mean-it
+```
