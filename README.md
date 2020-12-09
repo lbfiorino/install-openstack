@@ -384,7 +384,13 @@ cd /root/kolla-ansible/tools/
 
 
 ### 2.12 Instalar os clientes do OpenStack
-Os clientes foram instalados a partir do repositório RDO (https://www.rdoproject.org/repos/openstack/openstack-victoria/).
+
+O pacote `centos-release-openstack-victoria` ainda não estava disponível no momento da instalação dos clientes. Este pacote instala o repositório do CentOS com os clientes do OpenStack.
+
+Os clientes então foram instalados a partir do repositório RDO (https://www.rdoproject.org/repos/openstack/openstack-victoria/). 
+
+Após análise do repositório RDO `/etc/yum.repos.d/rdo-release.repo`, o mesmo aponta para os pacotes fornecidos pelo próprio CentOS para a release Victoria.
+
 ```bash
 # Do repositório RDO
 dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm
