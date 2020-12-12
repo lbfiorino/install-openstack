@@ -10,8 +10,10 @@
 
 
 ### ATENÇÃO!! ###
-### AJUSTAR HOSTS CONFORME NECESSÁRIO NO ITENS 2.3 E 2.6
-
+##### AJUSTAR OS HOSTS CONFORME NECESSÁRIO #####
+## Itens 2.3 e 2.6
+CONTROLLER_HOSTNAME="openstack-controller"
+COMPUTE01_HOSTNAME="openstack-compute01" 
 
 # 2.1 INSTALA KOLLA
 cd /root
@@ -38,12 +40,13 @@ echo "\n\n"
 echo "Chave para o usuario Root\n\n"
 cd /root
 ssh-keygen
-ssh-copy-id root@openstack-controller
-ssh-copy-id root@openstack-compute01
+ssh-copy-id root@$CONTROLLER_HOSTNAME
+ssh-copy-id root@$COMPUTE01_HOSTNAME
 
 echo "Chave para o usuario Stack\n\n"
 # Stack user
-sudo -H -u stack bash -c 'ssh-keygen; ssh-copy-id stack@openstack-controller; ssh-copy-id stack@openstack-compute01' 
+CMD='ssh-keygen; ssh-copy-id stack@'$CONTROLLER_HOSTNAME'; ssh-copy-id stack@'$COMPUTE01_HOSTNAME
+sudo -H -u stack bash -c "$CMD"
 
 
 # 2.4 CONFIGURAÇÃO DO INVENTÁRIO DO KOLLA
@@ -62,13 +65,14 @@ python3 generate_passwords.py
 
 # 2.6 CONFIGURACAO DOS HOSTS PARA O ANSIBLE
 mkdir /etc/ansible
-tee /etc/ansible/hosts <<-'EOF'
+tee /etc/ansible/hosts <<EOF
 [controller]
-openstack-controller
+$CONTROLLER_HOSTNAME
 
 [compute]
-openstack-compute01
+$COMPUTE01_HOSTNAME
 EOF
+
 
 
 # 2.12 INSTALA OS CLIENTES DO OPENSTACK
@@ -88,7 +92,7 @@ PROXIMOS PASSOS NO CONTROLADOR:
         keystone_admin_password: senha
 
 
-2.8 Configurar o arquivo /etc/kolla/globals.yml
+2.8 Configurar o arquivo /etc/kolla/globals.yml, ajustando as interfaces conforme necessário
 
         kolla_base_distro: \"centos\"
         kolla_install_type: \"source\"
@@ -111,7 +115,7 @@ PROXIMOS PASSOS NO CONTROLADOR:
         nova_compute_virt_type: \"qemu\"
 
 
-2.9 Configurar o arquivo /root/multinode
+2.9 Configurar o arquivo /root/multinode, ajustando os hosts conforme necessário
 
 	[control]
 	localhost
