@@ -27,13 +27,13 @@ git clone https://github.com/openstack/kolla-ansible -b stable/victoria
 cd kolla-ansible
 pip3 install .
 
+
 echo "\n\n"
 echo "---------------------------------------------------------------------"
 echo "GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS HOSTS"
 echo "Apenas tecle enter e informe a senha dos usuarios quando solicitado."
 echo "---------------------------------------------------------------------"
 echo "\n\n"
-
 
 # 2.3 GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS NÓS PARA OS USUÁRIOS ROOT E STACK
 # Root user
@@ -72,7 +72,6 @@ $CONTROLLER_HOSTNAME
 [compute]
 $COMPUTE01_HOSTNAME
 EOF
-
 
 
 # 2.12 INSTALA OS CLIENTES DO OPENSTACK
