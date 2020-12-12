@@ -9,6 +9,10 @@
 #--------------------------------------------------------------------------------
 
 
+### ATENÇÃO!! ###
+### AJUSTAR HOSTS CONFORME NECESSÁRIO NO ITENS 2.3 E 2.6
+
+
 # 2.1 INSTALA KOLLA
 cd /root
 git clone https://github.com/openstack/kolla -b stable/victoria
@@ -27,6 +31,8 @@ echo "GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS HOSTS"
 echo "Apenas tecle enter e informe a senha dos usuarios quando solicitado."
 echo "---------------------------------------------------------------------"
 echo "\n\n"
+
+
 # 2.3 GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS NÓS PARA OS USUÁRIOS ROOT E STACK
 # Root user
 echo "Chave para o usuario Root\n\n"
@@ -66,15 +72,10 @@ EOF
 
 
 # 2.12 INSTALA OS CLIENTES DO OPENSTACK
-# Do Python PyPI
-pip3 install python-openstackclient
-pip3 install gnocchiclient
-# OU
-# Do repositório CentOS
-#dnf install -y centos-release-openstack-victoria
-#dnf upgrade -y
-#dnf install -y python-openstackclient
-
+# Do repositório RDO
+dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm
+dnf install python3-openstackclient
+dnf install python3-gnocchiclient
 
 
 cd /root

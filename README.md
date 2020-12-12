@@ -454,6 +454,9 @@ COMPUTE01_IP="192.168.0.201"
 
 
 ### 3.2 Script `2-install-controller-victoria.sh` (para o controlador)
+
+No script, ajustar os hosts conforne necessário nos itens **2.3** e **2.6**.
+
 Este script realiza alguns procedimentos específicos no host controlador. São executados por este script os itens **2.1 ao 2.6**, e o item **2.12**.
 
 **Deve ser executado após** o script `1-install-common-all-nodes-victoria.sh`.
