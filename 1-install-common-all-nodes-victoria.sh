@@ -16,6 +16,11 @@ CONTROLLER_IP="192.168.0.200"
 COMPUTE01_HOSTNAME="openstack-compute01"
 COMPUTE01_IP="192.168.0.201"
 
+
+##### SENHA DO USUARIO STACK #####
+
+STACK_USER_PASS="stack"
+
 #--------------------------------------------------------------------------------
 
 # 1.2 REQUISITOS BASICOS
@@ -63,7 +68,7 @@ $COMPUTE01_IP			$COMPUTE01_HOSTNAME" >> /etc/hosts
 
 # 1.8 ADICIONA USUÁRIO STACK
 adduser stack
-echo "stack" | passwd --stdin stack
+echo $STACK_USER_PASS | passwd --stdin stack
 
 
 # 1.9 ADICIONA USUÁRIO STACK NO SUDOERS
