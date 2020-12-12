@@ -28,22 +28,28 @@ cd kolla-ansible
 pip3 install .
 
 
-echo "\n\n"
+echo
+echo
 echo "---------------------------------------------------------------------"
 echo "GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS HOSTS"
 echo "Apenas tecle enter e informe a senha dos usuarios quando solicitado."
 echo "---------------------------------------------------------------------"
-echo "\n\n"
+echo
+echo
 
 # 2.3 GERAÇÃO DA CHAVE SSH E INSERÇÃO NOS NÓS PARA OS USUÁRIOS ROOT E STACK
 # Root user
-echo "Chave para o usuario Root\n\n"
+echo "Chave para o usuario Root"
+echo
+echo
 cd /root
 ssh-keygen
 ssh-copy-id root@$CONTROLLER_HOSTNAME
 ssh-copy-id root@$COMPUTE01_HOSTNAME
 
-echo "Chave para o usuario Stack\n\n"
+echo "Chave para o usuario Stack"
+echo
+echo
 # Stack user
 CMD='ssh-keygen; ssh-copy-id stack@'$CONTROLLER_HOSTNAME'; ssh-copy-id stack@'$COMPUTE01_HOSTNAME
 sudo -H -u stack bash -c "$CMD"
@@ -84,6 +90,7 @@ dnf install python3-gnocchiclient
 cd /root
 
 echo "
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 PROXIMOS PASSOS NO CONTROLADOR:
 

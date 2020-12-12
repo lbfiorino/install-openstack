@@ -94,7 +94,8 @@ systemctl daemon-reload
 systemctl restart docker
 systemctl enable docker
 
-echo "\n\n
+echo "
+
 ---------------------------------------------------------------
 ATENCAO!
 
