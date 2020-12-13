@@ -111,7 +111,9 @@ PROXIMOS PASSOS NO CONTROLADOR:
         enable_ceilometer: \"yes\"
         enable_gnocchi: \"yes\"
         enable_neutron_provider_networks: \"yes\"
+		enable_neutron_sfc: \"yes\"
         enable_redis: \"yes\"
+		enable_tacker: \"yes\"
 
 
         NOTA:
