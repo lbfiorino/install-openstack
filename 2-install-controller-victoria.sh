@@ -81,8 +81,8 @@ EOF
 
 
 # 2.12 INSTALA OS CLIENTES DO OPENSTACK
-# Do repositório RDO
-dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm
+# Do repositório CentOS
+dnf install -y centos-release-openstack-victoria
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
 

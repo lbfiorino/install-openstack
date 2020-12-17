@@ -33,7 +33,7 @@ Diretórios do repositório:
 ## Sistema Operacional
 - CentOS 8 
     - Instalação mínima
-    - Release 8.2.2004 utilizada no momento da instalação
+    - Release testada: 8.3.2011
 - Sistema de arquivos XFS
 
 
@@ -389,23 +389,21 @@ cd /root/kolla-ansible/tools/
 
 ### 2.12 Instalar os clientes do OpenStack
 
-O pacote `centos-release-openstack-victoria` ainda não estava disponível no momento da instalação dos clientes. Este pacote instala o repositório do CentOS com os clientes do OpenStack.
-
-Os clientes então foram instalados a partir do repositório RDO (https://www.rdoproject.org/repos/openstack/openstack-victoria/). 
-
-Após análise do repositório RDO `/etc/yum.repos.d/rdo-release.repo`, o mesmo aponta para os pacotes fornecidos pelo próprio CentOS para a release Victoria.
+Os clientes quem funcionaram sem problemas foram os do repositório do próprio CentOS.
 
 ```bash
-# Do repositório RDO
-dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm
-
+# Do repositório CentOS
+dnf install centos-release-openstack-victoria
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
 ```
 :warning: Nota:
-> - O cliente do Gnocchi instalado via PIP apresentou problemas. Retornou o erro *"Not Acceptable (406)"* para o comando `delete`.
+>- O cliente do Gnocchi instalado via PIP apresentou problemas. Retornou o erro *"Not Acceptable (406)"* para o comando `delete`.
 >
-> - Para evitar conflitos, instalar todos os clientes a partir do mesmo repositório.
+>- Para evitar conflitos, instalar todos os clientes a partir do mesmo repositório.
+>
+>- Caso o pacote `centos-release-openstack-victoria` não esteja disponível, instalar o repositório RDO com os clientes da release Victoria.  
+`dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm`
 
 
 ### 2.13 Acessar o Horizon
