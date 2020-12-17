@@ -389,7 +389,7 @@ cd /root/kolla-ansible/tools/
 
 ### 2.12 Instalar os clientes do OpenStack
 
-Os clientes quem funcionaram sem problemas foram os do repositório do próprio CentOS.
+Os clientes foram instalados a partir do repositório do próprio CentOS.
 
 ```bash
 # Do repositório CentOS
