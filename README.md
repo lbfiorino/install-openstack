@@ -1,4 +1,4 @@
-# Instalação do OpenStack com Kolla-Ansible  :cloud:
+# Instalação do OpenStack Multi-Nó com Kolla-Ansible  :cloud:
 
 ### OpenStack Release: Victoria
 
