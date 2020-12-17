@@ -397,6 +397,11 @@ dnf install centos-release-openstack-victoria
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
 ```
+Para o cliente do Gnocchi funcionar é preciso adicionar a linha baixo no arquivo OpenRC fornecido pelo Horizon. Ex: `admin-openrc.sh`
+```bash
+export OS_AUTH_TYPE=password
+```
+
 :warning: Nota:
 >- O cliente do Gnocchi instalado via PIP apresentou problemas. Retornou o erro *"Not Acceptable (406)"* para o comando `delete`.
 >
