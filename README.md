@@ -305,8 +305,10 @@ No arquivo `/etc/kolla/globals.yml`, alterar os parâmetros abaixo.
 kolla_base_distro: "centos"
 kolla_install_type: "source"
 openstack_release: "victoria"
-# kolla_internal_vip_address: IP não utilizado na rede
+# kolla_internal_vip_address: IP não utilizado na rede (API Interna)
 kolla_internal_vip_address: "192.168.0.199"
+# kolla_external_vip_address: IP não utilizado na rede provider (API externa) - Caso necessário
+#kolla_external_vip_address: "192.168.254.199"
 network_interface: "enp0s3"
 neutron_external_interface: "enp0s8"
 
@@ -324,6 +326,8 @@ enable_tacker: "yes"
 >`nova_compute_virt_type: "qemu"`  
 >
 >- O parâmetro `kolla_internal_vip_address` requer um **IP não utilizado** na rede. Este IP será o de acesso a API. O Kolla-Ansible não aceitou colocar o mesmo IP da interface interna.
+>
+>- Caso o parâmetro `kolla_external_vip_address` (IP de acesso externo a API) seja habilitado, nesta instalação, o IP externo ficará na mesma interface da `rede Management` e o acesso externo deve ser feito por NAT 1:1. O ideal é configurar o parâmentro `kolla_external_vip_interface` para separar o tráfego. Porém, no ambiente testado não foi possível realizar essa configuração devido a limitaçãoes da rede.
 >
 >- Os valores padrões dos outros parâmetros estão descritos nas linhas comentadas do arquivo.
 
@@ -704,22 +708,29 @@ Para atualizar as imagens docker dos módulos do OpenStack, seguir os segintes p
 ## 12. TLS
 [Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
 
-:warning: Notas:
->- Esta configuração foi feita apenas em **caráter de TESTE**.
->
->- O Kolla-Ansible gerou o certificado self-signed com validade de 01 (um) ano apenas.
->
->- Configuração exclusiva para ambientes de desenvolvimento. Em produção não utilizar certificado self-signed.
->
->- Não foi realizado teste de acesso a API por HTTPS.
+Ao habilitar o TLS, o acesso ao Horizon e à API passa a ser feito pelo IP `kolla_internal_vip_address` e `kolla_external_vip_address`, neste caso, o NAT de acesso externo deve ser apontado para o IP `kolla_external_vip_address`, e este deve ser configurado com o IP válido do NAT.
 
- 
+Por padrão o Kolla-Ansible gera os certificados com validade de 01 (um) ano dentro do diretório `/etc/kolla/certificates/`. Para que os certificados sejam gerados com validade superior a 01 (um) ano, deve-se alterar o parâmetro `-days` nos  arquivos abaixo. Nesta instalação o parâmetro `-days` foi definido em 3650 (10 anos) em todos os arquivos.
+
+- `/root/kolla-ansible/ansible/roles/certificates/tasks/generate-root.yml`
+- `/root/kolla-ansible/ansible/roles/certificates/tasks/generate-backend.yml`
+- `/root/kolla-ansible/ansible/roles/certificates/tasks/generate.yml`
+
+:warning: Nota:
+>`generate-root.yml` : Certificado raiz.  
+>`generate-backend.yml` : Certificado para comunicação ente HAProxy (API interface) e os serviços do OpenStack.  
+>`generate.yml` : Certificado para acesso ao Horizon e a API.
+
 Para habilitar o TLS, configurar os parâmetros abaixo no arquivo `/etc/kolla/globals.yml`:
 
 ```bash
 kolla_enable_tls_internal: "yes"
-kolla_enable_tls_external: "{{ kolla_enable_tls_internal if kolla_same_external_internal_vip | bool else 'no' }}"
+kolla_enable_tls_external: "yes"
 kolla_copy_ca_into_containers: "yes"
+
+# Certificado raiz gerado pelo kolla em /etc/kolla/certificates/ca/root.crt
+# Este certificado deve ser fornecido aos clientes para ser inserido no arquivo OpenRC através do parâmetro OS_CACERT=
+kolla_admin_openrc_cacert: "root.crt"
 
 #If deploying on Debian or Ubuntu:
 #openstack_cacert: "/etc/ssl/certs/ca-certificates.crt"
