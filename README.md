@@ -753,10 +753,13 @@ cd /root/kolla-ansible/tools/
 # Reconfigura o ambiente
 ./kolla-ansible -i ../../multinode reconfigure
 ```
+:warning: Nota:
+> Como dito nas notas do item 2.8 (arquivo globals.yml), esta instalação não separou as interfaces da API interna e externa. Dessa forma ao acessar a API externamente, ocorrerá falha na verificação do certificado, pois o IP externo será diferente do IP interno. Neste caso, deve-se adicionar o parâmetro `--insecure` na linha de comando dos clientes do OpenStack. O parâmetro `--insecure` desabilita a verificação do certificado.
 
 
 ## 13. Upgrade de versão
 >`TODO`
+
 
 ## 14. Destruir a nuvem
 
@@ -770,3 +773,13 @@ Após o comando de *destroy* é necessário um novo *deploy*.
 
 ./kolla-ansible -i ../../multinode destroy --yes-i-really-really-mean-it
 ```
+
+## 15. Estudos e configurações futuras
+
+- Colocar o `kolla_external_vip_address` na interface da rede `provider`. Para separar o tráfego interno/externo à API;
+
+- Utilizar nomes de domínio e certificados válidos;
+
+- Adicionar um host como storage. Possibilitando o teste de migração das VMs entre nós de computação;
+
+- Processo de backup das VMs.
