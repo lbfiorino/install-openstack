@@ -780,6 +780,6 @@ Após o comando de *destroy* é necessário um novo *deploy*.
 
 - Utilizar nomes de domínio e certificados válidos;
 
-- Adicionar um host como storage. Possibilitando o teste de migração das VMs entre nós de computação;
+- Adicionar um host como storage. Possibilitando o teste de migração das VMs entre os nós de computação;
 
 - Processo de backup das VMs.
