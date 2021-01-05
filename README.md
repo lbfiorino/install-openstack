@@ -108,7 +108,7 @@ dnf -y upgrade
 dnf install -y python3-devel libffi-devel gcc openssl-devel python3-libselinux
 
 # (Opcional)
-#dnf group install -y "Development Tools"
+dnf group install -y "Development Tools"
 
 # Utilitários
 dnf install -y git python3-pip wget curl telnet tcpdump net-tools htop dstat nano
@@ -138,11 +138,10 @@ systemctl disable firewalld.service
 
 
 ### 1.5 Desabilitar SELINUX
+
+Editar o arquivo */etc/selinux/config* e alterar o parametro SELINUX para `disabled`. **É necessário reinicar a máquina.**
 ```bash
-setenforce 0
-```
-Editar o arquivo */etc/selinux/config* e alterar o parametro SELINUX para *disabled*.
-```
+# Requer reboot
 SELINUX=disabled
 ```
 
@@ -301,8 +300,12 @@ openstack-compute01
 
 ### 2.7 Alterar as senhas necessárias no arquivo */etc/kolla/passwords.yml*
 ```bash
+# Grafana
+grafana_admin_password: grafanaadmin
+
 # Senha do usuário admin para acesso ao Horizon
 keystone_admin_password: keystoneadmin
+
 ```
 
 
@@ -321,6 +324,7 @@ neutron_external_interface: "enp0s8"
 
 enable_ceilometer: "yes"
 enable_gnocchi: "yes"
+enable_grafana: "yes"
 enable_neutron_provider_networks: "yes"
 enable_neutron_sfc: "yes"
 enable_redis: "yes"
@@ -405,8 +409,10 @@ Os clientes foram instalados a partir do repositório do próprio CentOS.
 ```bash
 # Do repositório CentOS
 dnf install centos-release-openstack-victoria
+dnf -y upgrade
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
+dnf install python3-networking-sfc.noarch
 ```
 Para o cliente do Gnocchi funcionar é preciso adicionar a linha baixo no arquivo OpenRC fornecido pelo Horizon. Ex: `admin-openrc.sh`
 ```bash

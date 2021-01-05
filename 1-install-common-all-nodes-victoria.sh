@@ -26,13 +26,14 @@ STACK_USER_PASS="stack"
 # 1.2 REQUISITOS BASICOS
 
 dnf install -y epel-release
-dnf config-manager --enable PowerTools
+dnf config-manager --set-enabled powertools
+dnf -y upgrade
 
 # Requisitos Kolla-Ansible
 dnf install -y python3-devel libffi-devel gcc openssl-devel python3-libselinux
 
 # (Opcional)
-#dnf group install -y "Development Tools"
+dnf group install -y "Development Tools"
 
 # Utilitários
 dnf install -y git python3-pip wget curl telnet tcpdump net-tools htop dstat nano
@@ -87,13 +88,14 @@ cd /root
 curl -sSL https://get.docker.io | bash
 
 
-# 1.12 CONFIGURAÇÃO DO KOLLA E DOCKER
-# Criar o arquivo de configuração do kolla no systemd:
-mkdir -p /etc/systemd/system/docker.service.d
-tee /etc/systemd/system/docker.service.d/kolla.conf <<-'EOF'
-[Service]
-MountFlags=shared
-EOF
+# # 1.12 CONFIGURAÇÃO DO KOLLA E DOCKER
+# # Não necessário para a versões do Docker >= 18.09
+# # Criar o arquivo de configuração do kolla no systemd:
+# mkdir -p /etc/systemd/system/docker.service.d
+# tee /etc/systemd/system/docker.service.d/kolla.conf <<-'EOF'
+# [Service]
+# MountFlags=shared
+# EOF
 
 systemctl daemon-reload
 systemctl restart docker

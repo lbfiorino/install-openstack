@@ -83,9 +83,10 @@ EOF
 # 2.12 INSTALA OS CLIENTES DO OPENSTACK
 # Do repositório CentOS
 dnf install -y centos-release-openstack-victoria
+dnf -y upgrade
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
-
+dnf install python3-networking-sfc.noarch
 
 cd /root
 
