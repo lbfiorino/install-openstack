@@ -101,7 +101,7 @@ reboot
 
 ```bash
 dnf install -y epel-release
-dnf config-manager --enable PowerTools
+dnf config-manager --set-enabled powertools
 dnf -y upgrade
 
 ## Requisitos Kolla-Ansible
@@ -158,6 +158,8 @@ SELINUX=disabled
 
 ### 1.7 Configurar a interface da rede provider SEM IP
 
+[Configure network interfaces](https://docs.openstack.org/install-guide/environment-networking-controller.html) (all nodes)
+
 Editar o arquivo */etc/sysconfig/network-scripts/ifcfg-enp0s8* e ajustar os parâmetros de acordo com o exemplo abaixo.
 ```bash
 TYPE="Ethernet"
@@ -199,7 +201,8 @@ curl -sSL https://get.docker.io | bash
 ```
 
 
-### 1.12 Configuração do Docker para o Kolla
+### ~~1.12 Configuração do Docker para o Kolla~~
+#### <span style="color:red">Não necessário para a release Victoria</spam>
 Criar o arquivo de configuração do kolla no systemd:
 ```bash
 mkdir -p /etc/systemd/system/docker.service.d
