@@ -95,7 +95,8 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 dnf -y upgrade
 reboot
 ```
-
+:Wargning: Nota:
+> A reinicialização é necessária caso o kernel seja atualizado.
 
 ### 1.2 Requisitos básicos
 
@@ -139,11 +140,12 @@ systemctl disable firewalld.service
 
 ### 1.5 Desabilitar SELINUX
 
-Editar o arquivo */etc/selinux/config* e alterar o parametro SELINUX para `disabled`. **É necessário reinicar a máquina.**
+Editar o arquivo */etc/selinux/config* e alterar o parametro SELINUX para `disabled`.
 ```bash
 # Requer reboot
 SELINUX=disabled
 ```
+**Reiniciar a máquina para aplicar a alteração**.
 
 ### 1.6 Adicionar hosts no */etc/hosts*
 ```bash
@@ -169,7 +171,7 @@ DEVICE="enp0s8"
 ONBOOT="yes"
 ```
 
-Reiniciar a máquina para aplicar as alterações.
+**Reiniciar a máquina para aplicar as alterações**.
 
 ### 1.8 Criar o usuário stack
 ```bash
