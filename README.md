@@ -201,8 +201,11 @@ curl -sSL https://get.docker.io | bash
 ```
 
 
-### ~~1.12 Configuração do Docker para o Kolla~~
-:warning: **Não necessário para a release Victoria**
+### 1.12 Configuração do Docker para o Kolla
+:warning: **Não necessário para a versões do Docker >= 18.09**
+
+[Docker 18.09 Reelase](https://docs.docker.com/engine/release-notes/18.09/#18090)
+> A configuração foi removida pelo kolla-ansible durante o deploy.
 
 Criar o arquivo de configuração do kolla no systemd:
 ```bash
