@@ -301,7 +301,7 @@ enable_ceilometer: "yes"
 #enable_freezer: "no"
 enable_gnocchi: "yes"
 #enable_gnocchi_statsd: "no"
-#enable_grafana: "no"
+enable_grafana: "yes"
 #enable_heat: "{{ enable_openstack_core | bool }}"
 #enable_horizon: "{{ enable_openstack_core | bool }}"
 #enable_horizon_blazar: "{{ enable_blazar | bool }}"
@@ -359,7 +359,7 @@ enable_gnocchi: "yes"
 #enable_neutron_bgp_dragent: "no"
 enable_neutron_provider_networks: "yes"
 #enable_neutron_segments: "no"
-#enable_neutron_sfc: "no"
+enable_neutron_sfc: "yes"
 #enable_neutron_trunk: "no"
 #enable_neutron_metering: "no"
 #enable_neutron_infoblox_ipam_agent: "no"
@@ -386,7 +386,7 @@ enable_redis: "yes"
 #enable_storm: "{{ enable_monasca | bool }}"
 #enable_swift: "no"
 #enable_swift_s3api: "no"
-#enable_tacker: "no"
+enable_tacker: "yes"
 #enable_telegraf: "no"
 #enable_tempest: "no"
 #enable_trove: "no"
@@ -498,10 +498,10 @@ enable_redis: "yes"
 # Gnocchi options
 #################
 # Valid options are [ file, ceph, swift ]
-#gnocchi_backend_storage: "{% if enable_swift | bool %}swift{% else %}file{% endif %}"
+gnocchi_backend_storage: "{% if enable_swift | bool %}swift{% else %}file{% endif %}"
 
 # Valid options are [redis, '']
-#gnocchi_incoming_storage: "{{ 'redis' if enable_redis | bool else '' }}"
+gnocchi_incoming_storage: "{{ 'redis' if enable_redis | bool else '' }}"
 
 ################################
 # Cinder - Block Storage Options
