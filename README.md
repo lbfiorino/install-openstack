@@ -93,10 +93,10 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 
 ```bash
 dnf -y upgrade
+
+# A reinicialização é necessária caso o kernel seja atualizado.
 reboot
 ```
-:Wargning: Nota:
-> A reinicialização é necessária caso o kernel seja atualizado.
 
 ### 1.2 Requisitos básicos
 
