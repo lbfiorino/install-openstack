@@ -202,7 +202,7 @@ curl -sSL https://get.docker.io | bash
 
 
 ### ~~1.12 Configuração do Docker para o Kolla~~
-#### Não necessário para a release Victoria
+:warning: #### Não necessário para a release Victoria
 
 Criar o arquivo de configuração do kolla no systemd:
 ```bash
