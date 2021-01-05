@@ -112,7 +112,7 @@ dnf install -y python3-devel libffi-devel gcc openssl-devel python3-libselinux
 dnf group install -y "Development Tools"
 
 # Utilitários
-dnf install -y git python3-pip wget curl telnet tcpdump net-tools htop dstat nano
+dnf install -y git python3-pip wget curl telnet wireshark-cli tcpdump net-tools htop dstat nano
 
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade setuptools
