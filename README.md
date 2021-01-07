@@ -199,6 +199,9 @@ pip3 install .
 ```bash
 cd /root
 curl -sSL https://get.docker.io | bash
+
+systemctl enable docker
+systemctl start docker
 ```
 
 
@@ -219,7 +222,6 @@ EOF
 
 systemctl daemon-reload
 systemctl restart docker
-systemctl enable docker
 ```
 
 
