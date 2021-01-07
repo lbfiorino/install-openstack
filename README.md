@@ -378,7 +378,9 @@ Foram usados os comandos para `development`.
 
 Para melhores resultados, o item **2.14 Tunning Ansible** mostra alguns parâmetros de performance do Ansible, que devem ser configurados antes de executar os comandos abaixo.
 
-:warning: **ATENÇÃO:** Caso seja necessário habilitar outros módulos, leia o **item 8** antes de realizar o *deploy*. 
+:warning: **ATENÇÃO:**
+>-  Caso seja necessário habilitar outros módulos, leia o **item 8** antes de realizar o *deploy*;
+>- Para habilitar o TLS, leia o **item 12** antes de realizar o *deploy*.
 
 ```bash
 # For development:
@@ -768,8 +770,12 @@ cd /root/kolla-ansible/tools/
 
 # Gera o certificado self-signed
 ./kolla-ansible -i ../../multinode certificates
+```
 
-# Reconfigurar o ambiente caso o deplou já tenha sido feito
+Caso o deploy já tenha sido feito, reconfigurar o ambiente com o comando abaixo. Caso contrário, voltar ao item 2.11 para fazer o deploy.
+
+```bash
+# Reconfigurar o ambiente caso o deploy já tenha sido feito
 ./kolla-ansible -i ../../multinode reconfigure
 ```
 :warning: Nota:
