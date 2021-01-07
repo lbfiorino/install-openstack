@@ -725,6 +725,8 @@ Para atualizar as imagens docker dos módulos do OpenStack, seguir os segintes p
 ## 12. TLS
 [Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
 
+:warning: **É recomendado habilitar o TLS antes de realizar o deploy (item 2.11)**.
+
 Ao habilitar o TLS, o acesso ao Horizon e à API passa a ser feito pelo IP `kolla_internal_vip_address` e `kolla_external_vip_address`, neste caso, o NAT de acesso externo deve ser apontado para o IP `kolla_external_vip_address`, e este deve ser configurado com o IP válido do NAT.
 
 Por padrão o Kolla-Ansible gera os certificados com validade de 01 (um) ano dentro do diretório `/etc/kolla/certificates/`. Para que os certificados sejam gerados com validade superior a 01 (um) ano, deve-se alterar o parâmetro `-days` nos  arquivos abaixo. Nesta instalação o parâmetro `-days` foi definido em 3650 (10 anos) em todos os arquivos.
@@ -767,7 +769,7 @@ cd /root/kolla-ansible/tools/
 # Gera o certificado self-signed
 ./kolla-ansible -i ../../multinode certificates
 
-# Reconfigura o ambiente
+# Reconfigurar o ambiente caso o deplou já tenha sido feito
 ./kolla-ansible -i ../../multinode reconfigure
 ```
 :warning: Nota:
