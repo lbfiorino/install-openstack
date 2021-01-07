@@ -727,7 +727,7 @@ Para atualizar as imagens docker dos módulos do OpenStack, seguir os segintes p
 ## 12. TLS
 [Documentação TLS](https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html)
 
-:warning: **É recomendado habilitar o TLS antes de realizar o deploy (item 2.11)**.
+:warning: **É recomendado habilitar o TLS antes de realizar o *deploy* (item 2.11)**.
 
 Ao habilitar o TLS, o acesso ao Horizon e à API passa a ser feito pelo IP `kolla_internal_vip_address` e `kolla_external_vip_address`, neste caso, o NAT de acesso externo deve ser apontado para o IP `kolla_external_vip_address`, e este deve ser configurado com o IP válido do NAT.
 
@@ -772,7 +772,7 @@ cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode certificates
 ```
 
-Caso o deploy já tenha sido feito, reconfigurar o ambiente com o comando abaixo. Caso contrário, voltar ao item 2.11 para fazer o deploy.
+Caso o *deploy* já tenha sido feito, reconfigurar o ambiente com o comando abaixo. Caso contrário, voltar ao item 2.11 para fazer o *deploy*.
 
 ```bash
 # Reconfigurar o ambiente caso o deploy já tenha sido feito
