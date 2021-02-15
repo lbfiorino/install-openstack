@@ -574,6 +574,10 @@ Capturas de tela:
 
 
 ## 5. Roteadores e Instâncias
+```diff
+-TODO
+Adicionar prints para criar roteador
+```
 Com as redes criadas, é preciso criar um roteador para permitir a comunicação entre as redes.  
 
 Posteriormente, pode-se criar as instâncias (máquinas virtuais).
