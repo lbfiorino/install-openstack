@@ -4,7 +4,7 @@
 
 [OpenStack Releases](https://releases.openstack.org/)
 
-[Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/) [[PDF[(https://docs.openstack.org//kolla-ansible/victoria/doc-kolla-ansible.pdf)]  
+[Documentação Kolla-Ansible](https://docs.openstack.org/kolla-ansible/victoria/) [[PDF](https://docs.openstack.org//kolla-ansible/victoria/doc-kolla-ansible.pdf)]  
 
 [Kolla-Ansible Tips and Tricks](https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks)
 
