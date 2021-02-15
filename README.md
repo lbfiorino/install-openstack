@@ -68,11 +68,11 @@ As máquinas virtuais (*controller* e *compute01*) foram configuradas com duas i
 
 -  **Diagrama da rede:**
 
-![Infraestrutura](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/infraestrutura.svg)
+![Infraestrutura](imagens/infraestrutura.svg)
 
 -  **Diagrama da rede no ambiente virtual:**
 
-![Infraestrutura-Virtual](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/infra-virtual.svg)
+![Infraestrutura-Virtual](imagens/infra-virtual.svg)
 
 :warning: Notas:
 >- No VirtualBox, configurar o Modo Promíscuo nas interfaces de rede das VMs para "Permitir Tudo". 
