@@ -701,7 +701,9 @@ Porém, esse recurso **não foi utlizado**. Durante o `pull` as imagens foram ba
 
 
 ## 10. Remover um Nó de Computação
-> `TODO`
+```diff
+-TODO
+```
 
 
 ## 11. Atualizar as imagens docker da release instalada
