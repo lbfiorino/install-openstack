@@ -12,6 +12,8 @@
 
 [Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)
 
+[MTU considerations](https://docs.openstack.org/neutron/victoria/admin/config-mtu.html)
+
 
 Diretórios do repositório:  
 - `arquivos-conf`- contém os arquivos de configuração utilizados na instalação
