@@ -546,13 +546,13 @@ Bridge br-ex
 
 Capturas de tela:
 
-![Provider-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-network.png)
+![Provider-Network](imagens/horizon-provider-network.png)
 
 
-![Provider-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet.png)
+![Provider-Subnet](imagens/horizon-provider-subnet.png)
 
 
-![Provider-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-provider-subnet-details.png)
+![Provider-Subnet-Details](imagens/horizon-provider-subnet-details.png)
 
 
 ### 4.2 Redes privadas
@@ -563,12 +563,12 @@ Ao criar uma rede dentro do projeto, não é exibida a opção  `Provider Networ
 
 Capturas de tela:
 
-![Private-Network](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-network.png)
+![Private-Network](imagens/horizon-private-network.png)
 
 
-![Private-Subnet](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-subnet.png)
+![Private-Subnet](imagens/horizon-private-subnet.png)
 
-![Private-Subnet-Details](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/horizon-private-subnet-details.png)
+![Private-Subnet-Details](imagens/horizon-private-subnet-details.png)
 
 
 ## 5. Roteadores e Instâncias
