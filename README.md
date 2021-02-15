@@ -799,6 +799,8 @@ Após o comando de *destroy* é necessário um novo *deploy*.
 
 ## 15. Estudos e configurações futuras
 
+- Configurar MTU para Jumbo Frames;
+
 - Colocar o `kolla_external_vip_address` na interface da rede `provider`. Para separar o tráfego interno/externo à API;
 
 - Utilizar nomes de domínio e certificados válidos;
