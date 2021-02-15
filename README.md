@@ -36,7 +36,7 @@ Diretórios do repositório:
 
 
 ## Topologia multinode OpenStack
-![Topologia](https://raw.githubusercontent.com/lbfiorino/install-openstack/main/imagens/topologia.png)
+![Topologia](imagens/topologia.png)
 
 
 ## Infraestrutura utilizada
