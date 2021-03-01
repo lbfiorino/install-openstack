@@ -10,6 +10,8 @@
 
 [Ceilometer Telemetry Measurements](https://docs.openstack.org/ceilometer/victoria/admin/telemetry-measurements.html)
 
+[Ceilometer Install RHEL/CentOS](https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html)
+
 [Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)
 
 [MTU considerations](https://docs.openstack.org/neutron/victoria/admin/config-mtu.html)
