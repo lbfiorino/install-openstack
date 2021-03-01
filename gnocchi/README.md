@@ -11,22 +11,21 @@ Referências:
 ```bash
 # Default: MEAN
 gnocchi measures show --resource-id <server-id> cpu
-```
 
-### Valor Médio, igual ao anterior
-```bash
+# OR 
 gnocchi measures show --resource-id  <server-id> cpu --aggregation mean
 ```
 
-### Valor Máximo  
+### Usando a função de agregação rate:mean
+Para os comandos abaixo é preciso que a Archive Policy tenha o método de agregação `rate:mean`.
+Útil para Achive Police `ceilometer-high-rate` e `ceilometer-low-rate`.
 ```bash
-gnocchi measures show --resource-id  <server-id> cpu --aggregation max
-```
+gnocchi measures show --resource-id <uuid> --aggregation rate:mean cpu
 
-### Valor Mínimo 
-```bash
-gnocchi measures show --resource-id  <server-id> cpu --aggregation min
+# Or use the dynamic aggregation feature for the same result:
+gnocchi aggregates '(metric cpu rate:mean)' id=<uuid>
 ```
+Caso a Archive Policy não tenha o método de agregação `rate:mean`, utilizar o comando `gnocchi aggregates` a seguir.
 
 ## Usando gnocchi aggregates
 
