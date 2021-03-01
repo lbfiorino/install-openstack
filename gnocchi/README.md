@@ -5,26 +5,30 @@
 
 ## Mostra as medidas em NS (nanosegundos) Victoria release
 ```bash
-gnocchi measures show --resource-id <server-id> cpu (default MEAN)
+# Default: MEAN
+gnocchi measures show --resource-id <server-id> cpu
 ```
 
-### valor Médio
+### Valor Médio, igual ao anterior
 ```bash
 gnocchi measures show --resource-id  <server-id> cpu --aggregation mean
 ```
 
-### valor Máximo  
+### Valor Máximo  
 ```bash
 gnocchi measures show --resource-id  <server-id> cpu --aggregation max
 ```
 
-### valor Mínimo 
+### Valor Mínimo 
 ```bash
 gnocchi measures show --resource-id  <server-id> cpu --aggregation min
 ```
 
-## Usando gnocchi aggregates, resultados em NS
+## Usando gnocchi aggregates
+
+### Mostra as medidas
 ```bash
+# Igual a : gnocchi measures show --resource-id <server-id> cpu
 gnocchi aggregates '(metric cpu mean)' id=<server-id>
 ```
 
