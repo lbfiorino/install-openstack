@@ -17,8 +17,9 @@
 
 
 Diretórios do repositório:  
-- `arquivos-conf`- contém os arquivos de configuração utilizados na instalação
-- `imagens` - contém os diagramas de rede da documentação
+- `arquivos-conf`- contém os arquivos de configuração utilizados na instalação;
+- `imagens` - contém os diagramas de rede da documentação;
+- `gnocchi` - documentação módulo Gnocchi.
 
 
 ## Limitações
