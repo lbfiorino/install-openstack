@@ -624,6 +624,8 @@ cd /root/kolla-ansible/tools/
 
 
 ### 8.1 Ceilometer / Gnocchi - Default Archive Policy
+[Lista de métricas descontinuadas - Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)  
+[Deprecation Notes- Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#deprecation-notes)
 
 Por padrão o as políticas de arquivo (*Archive Policy*) criadas pelo Ceilometer no Gnocchi é `low`. Para alterar a política para `high`, deve-se criar os arquivos de configuração `pipeline.yaml` e `polling.yaml` no diretório `/etc/kolla/config/ceilometer` seguindo os passos abaixo.
 
