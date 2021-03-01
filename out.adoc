@@ -1,3 +1,5 @@
+:toc:
+
 == Instalação do OpenStack Multi-Nó com Kolla-Ansible :cloud:
 
 === OpenStack Release: Victoria
@@ -24,8 +26,6 @@ considerations]
 Diretórios do repositório: +
 - `arquivos-conf`- contém os arquivos de configuração utilizados na instalação -
 `imagens` - contém os diagramas de rede da documentação
-
-:toc:
 
 === Limitações
 
