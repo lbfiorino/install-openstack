@@ -44,9 +44,9 @@ gnocchi aggregates '(/ (aggregate rate:mean (metric cpu mean)) 1000000000.0)' id
 
 ### Converter para percentual
 :warning: ATENÇÃO COM A GRANULARIDADE:
-> 1.0    : Dividir por  1000000000.0  
-> 60.0   : Dividir por 60000000000.0  
-> 3600.0 : Dividir por 3600000000000.0  
+>&#9 1.0    : Dividir por  1000000000.0  
+>60.0   : Dividir por 60000000000.0  
+>3600.0 : Dividir por 3600000000000.0  
 ```bash
 gnocchi aggregates '(* (/ (aggregate rate:mean (metric cpu mean)) 1000000000.0) 100)' id=<server-id>
 ```
