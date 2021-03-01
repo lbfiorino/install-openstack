@@ -11,7 +11,8 @@
 [Ceilometer Telemetry Measurements](https://docs.openstack.org/ceilometer/victoria/admin/telemetry-measurements.html)  
 [Ceilometer Install RHEL/CentOS](https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html)  
 [Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)  
-[Ceilometer - Métricas removidas a partir da Release Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)
+[Ceilometer - Lista de métricas descontinuadas - Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)  
+[Ceilometer Deprecation Notes- Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#deprecation-notes)
 
 [MTU considerations](https://docs.openstack.org/neutron/victoria/admin/config-mtu.html)
 
