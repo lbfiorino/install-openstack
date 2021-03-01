@@ -663,8 +663,8 @@ As métricas com *Archive Policy* `high` serão criadas para as novas instância
 
 :warning: Nota:
 > Na configuração do `pipeline.yaml`, a release Victoria adiciona o parâmetro `filter_project=service`. 
-> - Release Rocky: `gnocchi://?archive_policy=high` 
-> - Release Victoria: `gnocchi://?filter_project=service&archive_policy=low`
+> - [Release Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#relnotes-11-0-0-stable-rocky-upgrade-notes): `gnocchi://?archive_policy=high` 
+> - [Release Victoria](https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html#install-and-configure-components): `gnocchi://?filter_project=service&archive_policy=low`
 
 
 
