@@ -17,7 +17,7 @@ gnocchi measures show --resource-id  <server-id> cpu --aggregation mean
 ```
 
 ### Usando a função de agregação rate:mean
-Para os comandos abaixo é preciso que a Archive Policy tenha o método de agregação `rate:mean`.
+Para os comandos abaixo é preciso que a Archive Policy tenha o método de agregação `rate:mean`.  
 Útil para Achive Police `ceilometer-high-rate` e `ceilometer-low-rate`.
 ```bash
 gnocchi measures show --resource-id <uuid> --aggregation rate:mean cpu
