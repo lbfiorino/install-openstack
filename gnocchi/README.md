@@ -1,4 +1,6 @@
 # Gnocchi - Calcular rate a partir da Release Stein
+Algumas métricas foram descontinuadas a partir da release Stein. Com isso é preciso utilizar as funções do Gnocchi para calumar essas métricas.  
+[Lista de métricas descontiadas](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)
 
 **Referências:**  
 [How I Learned to Stop Worrying and Love Gnocchi aggregation](https://berndbausch.medium.com/how-i-learned-to-stop-worrying-and-love-gnocchi-aggregation-c98dfa2e20fe)  
