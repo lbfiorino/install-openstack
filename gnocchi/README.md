@@ -43,7 +43,7 @@ gnocchi aggregates '(/ (aggregate rate:mean (metric cpu mean)) 1000000000.0)' id
 ```
 
 ### Converter para percentual
-:warning: ATENÇÃO COM A GRANULARIDADE:
+:warning: **Atenção com a Granularidade**:
 | Granularidade | Dividir por |
 | --- | --- |
 | 1.0 | 1000000000.0 |
