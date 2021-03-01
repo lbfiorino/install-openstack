@@ -2,6 +2,7 @@
 Algumas métricas foram descontinuadas a partir da release Stein. Com isso é preciso utilizar as funções do Gnocchi para calumar essas métricas.  
 [Lista de métricas descontinuadas - Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)  
 [Deprecation Notes- Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#deprecation-notes)
+
 **Referências:**  
 [How I Learned to Stop Worrying and Love Gnocchi aggregation](https://berndbausch.medium.com/how-i-learned-to-stop-worrying-and-love-gnocchi-aggregation-c98dfa2e20fe)  
 [OpenStack get vm cpu_util with Stein version](https://stackoverflow.com/questions/56216683/openstack-get-vm-cpu-util-with-stein-version)
