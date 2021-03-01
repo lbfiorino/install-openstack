@@ -8,11 +8,10 @@
 
 [Kolla-Ansible Tips and Tricks](https://docs.openstack.org/kolla-ansible/victoria/user/operating-kolla.html#tips-and-tricks)
 
-[Ceilometer Telemetry Measurements](https://docs.openstack.org/ceilometer/victoria/admin/telemetry-measurements.html)
-
-[Ceilometer Install RHEL/CentOS](https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html)
-
-[Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)
+[Ceilometer Telemetry Measurements](https://docs.openstack.org/ceilometer/victoria/admin/telemetry-measurements.html)  
+[Ceilometer Install RHEL/CentOS](https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html)  
+[Ceilometer Release Notes](https://docs.openstack.org/releasenotes/ceilometer/)  
+[Ceilometer - Métricas removidades a partir da Release Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)
 
 [MTU considerations](https://docs.openstack.org/neutron/victoria/admin/config-mtu.html)
 
