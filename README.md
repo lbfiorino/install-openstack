@@ -661,6 +661,12 @@ cd /root/kolla-ansible/tools/
 
 As métricas com *Archive Policy* `high` serão criadas para as novas instâncias. As instâncias existentes permanecerão com a política `low`.
 
+:warning: Nota:
+> Na configuração do `pipeline.yaml`, a release Victoria adiciona o parâmetro `filter_project=service`. 
+> - Release Rocky: `gnocchi://?archive_policy=high` 
+> - Release Victoria: `gnocchi://?filter_project=service&archive_policy=low`
+
+
 
 ## 9. Adicionar um Nó de Computação
 
