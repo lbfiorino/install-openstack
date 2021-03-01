@@ -22,7 +22,7 @@ Diretórios do repositório:
 - `imagens` - contém os diagramas de rede da documentação
 
 # Table of Contents
--
+- [Limitações](#limitacoes)
 
 ## Limitações
 - A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
