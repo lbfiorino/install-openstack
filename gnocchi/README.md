@@ -1,6 +1,6 @@
 # Gnocchi - Calcular rate a partir da Release Stein
 
-Referências:  
+**Referências:**  
 [How I Learned to Stop Worrying and Love Gnocchi aggregation](https://berndbausch.medium.com/how-i-learned-to-stop-worrying-and-love-gnocchi-aggregation-c98dfa2e20fe)  
 [OpenStack get vm cpu_util with Stein version](https://stackoverflow.com/questions/56216683/openstack-get-vm-cpu-util-with-stein-version)
 
