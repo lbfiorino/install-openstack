@@ -1,7 +1,7 @@
 # Gnocchi - Calcular rate a partir da Release Stein
 
 **Ex: Calcular cpu_util em %**  
-`<server-id>` é o resource id da instancia no gnocchi
+`<server-id>` é o resource id da instência no gnocchi.
 
 ## Mostra as medidas em NS (nanosegundos) Victoria release
 ```bash
