@@ -7,7 +7,7 @@ Referências:
 ## Ex: Calcular cpu_util em %
 `<server-id>` é o resource id da instência no gnocchi.
 
-### Mostra as medidas em NS (nanosegundos) Victoria release
+### Mostra as coletas em NS (nanosegundos) Victoria release
 ```bash
 # Default: MEAN
 gnocchi measures show --resource-id <server-id> cpu
@@ -30,7 +30,7 @@ gnocchi measures show --resource-id  <server-id> cpu --aggregation min
 
 ## Usando gnocchi aggregates
 
-### Mostra as medidas
+### Mostra as coletas
 ```bash
 # Igual a : gnocchi measures show --resource-id <server-id> cpu
 gnocchi aggregates '(metric cpu mean)' id=<server-id>
