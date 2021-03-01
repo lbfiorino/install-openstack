@@ -662,7 +662,7 @@ cd /root/kolla-ansible/tools/
 As métricas com *Archive Policy* `high` serão criadas para as novas instâncias. As instâncias existentes permanecerão com a política `low`.
 
 :warning: Nota:
-> Na configuração do `pipeline.yaml`, a release Victoria adiciona o parâmetro `filter_project=service`. 
+> Na configuração do `pipeline.yaml`, a release Victoria adiciona o parâmetro `filter_project=service`. Foi configurado com a documentação da Release Rocky, posteriomente foi vista a documentação da Release Victoria. Mas não foi encontrada diferenças entre as configurações na documentação.
 > - [Release Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#relnotes-11-0-0-stable-rocky-upgrade-notes): `gnocchi://?archive_policy=high` 
 > - [Release Victoria](https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html#install-and-configure-components): `gnocchi://?filter_project=service&archive_policy=low`
 
