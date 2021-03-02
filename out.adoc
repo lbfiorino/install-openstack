@@ -1,3 +1,5 @@
+= Instalação do OpenStack Multi-Nó com Kolla-Ansible :cloud:
+
 // settings:
 //:idprefix:
 //:idseparator: -
@@ -20,8 +22,6 @@ endif::[]
 
 :toc:
 :toc-title:
-
-= Instalação do OpenStack Multi-Nó com Kolla-Ansible :cloud:
 
 == OpenStack Release: Victoria
 
