@@ -1,8 +1,8 @@
 :toc:
 
-== Instalação do OpenStack Multi-Nó com Kolla-Ansible :cloud:
+= Instalação do OpenStack Multi-Nó com Kolla-Ansible :cloud:
 
-=== OpenStack Release: Victoria
+== OpenStack Release: Victoria
 
 https://releases.openstack.org/[OpenStack Releases]
 
