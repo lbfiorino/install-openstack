@@ -1,5 +1,5 @@
 # Gnocchi - Calcular métricas _cpu_util_ e _*.rate_ a partir da Release Stein
-Algumas métricas foram descontinuadas a partir da release Stein. Com isso é preciso utilizar as funções do Gnocchi para calumar essas métricas.
+Algumas métricas foram descontinuadas a partir da release Stein. Com isso é preciso utilizar as funções do Gnocchi para calcular essas métricas.
 
 ### [Lista de métricas descontinuadas - Release Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes):
 - The deprecated disk.* meters have been removed. Use the disk.device.* meters instead.
