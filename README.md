@@ -857,7 +857,9 @@ Caso o *deploy* já tenha sido feito, reconfigurar o ambiente com o comando abai
 
 
 ## 13. Upgrade de versão
->`TODO`
+```diff
+-TODO
+```
 
 
 ## 14. Destruir a nuvem
