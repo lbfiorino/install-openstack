@@ -27,25 +27,25 @@ Diretórios do repositório: +
 - `arquivos-conf`- contém os arquivos de configuração utilizados na instalação -
 `imagens` - contém os diagramas de rede da documentação
 
-=== Limitações
+== Limitações
 
 * A instalação não cria automaticamente as redes dentro do OpenStack. A
 configuração deve ser feita de forma manual no Horizon ou pela linha de comando;
 
-=== Requisitos mínimos de hardware
+== Requisitos mínimos de hardware
 
 * 2 Interfaces de rede
 * 8GB Memória RAM
 * 40GB Espaço em disco
 
-=== Sistema Operacional
+== Sistema Operacional
 
 * CentOS 8
 ** Instalação mínima
 ** Release testada: 8.3.2011
 * Sistema de arquivos XFS
 
-=== Topologia multinode OpenStack
+== Topologia multinode OpenStack
 
 image:imagens/topologia.png[Topologia]
 
@@ -60,7 +60,7 @@ rede do roteador da operadora (_provider_).
 
 :warning: Nota: >Não foi utlizado Vlan nas redes.
 
-==== Configuração da rede
+=== Configuração da rede
 
 * Nomes das interfaces devem ser iguais nos nós
 * Interfaces:
@@ -87,12 +87,12 @@ falsificação de endereço MAC (MAC Spoofing) nas interfaces das máquinas virt
 que estão na rede _provider_. > >- Em caso de problema no _pull_ das imagens do
 docker, verificar o MTU da rede.
 
-=== 1. Procedimentos comuns a TODOS OS NÓS
+== 1. Procedimentos comuns a TODOS OS NÓS
 
 :warning: Nota: > Todo o processo de instalação teve como base o usuário _root_
 e o diretório _/root/_
 
-==== 1.1 Atualizar o sistema operacional
+=== 1.1 Atualizar o sistema operacional
 
 [source,bash]
 ----
@@ -102,7 +102,7 @@ dnf -y upgrade
 reboot
 ----
 
-==== 1.2 Requisitos básicos
+=== 1.2 Requisitos básicos
 
 [source,bash]
 ----
@@ -123,7 +123,7 @@ python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade setuptools
 ----
 
-==== 1.3 Desabilitar NetworkManager e habilitar network-scripts
+=== 1.3 Desabilitar NetworkManager e habilitar network-scripts
 
 [source,bash]
 ----
@@ -136,14 +136,14 @@ systemctl enable network.service
 systemctl start network.service
 ----
 
-==== 1.4 Desabilitar Firewalld
+=== 1.4 Desabilitar Firewalld
 
 ....
 systemctl stop firewalld.service
 systemctl disable firewalld.service
 ....
 
-==== 1.5 Desabilitar SELINUX
+=== 1.5 Desabilitar SELINUX
 
 Editar o arquivo _/etc/selinux/config_ e alterar o parametro SELINUX para
 `disabled`.
@@ -156,7 +156,7 @@ SELINUX=disabled
 
 *Reiniciar a máquina para aplicar a alteração*.
 
-==== 1.6 Adicionar hosts no _/etc/hosts_
+=== 1.6 Adicionar hosts no _/etc/hosts_
 
 [source,bash]
 ----
@@ -167,7 +167,7 @@ SELINUX=disabled
 192.168.0.201           openstack-compute01
 ----
 
-==== 1.7 Configurar a interface da rede provider SEM IP
+=== 1.7 Configurar a interface da rede provider SEM IP
 
 https://docs.openstack.org/install-guide/environment-networking-controller.html[Configure
 network interfaces] (all nodes)
@@ -187,7 +187,7 @@ ONBOOT="yes"
 
 *Reiniciar a máquina para aplicar as alterações*.
 
-==== 1.8 Criar o usuário stack
+=== 1.8 Criar o usuário stack
 
 [source,bash]
 ----
@@ -196,7 +196,7 @@ adduser stack
 echo "stack" | passwd --stdin stack
 ----
 
-==== 1.9 Adicionar o usuário stack no sudoers
+=== 1.9 Adicionar o usuário stack no sudoers
 
 Adicionar a linha abaixo no final do arquivo _/etc/sudoers_
 
@@ -204,7 +204,7 @@ Adicionar a linha abaixo no final do arquivo _/etc/sudoers_
 stack   ALL=(ALL) ALL
 ....
 
-==== 1.10 Instalar Ansible na versão 2.9
+=== 1.10 Instalar Ansible na versão 2.9
 
 [source,bash]
 ----
@@ -214,7 +214,7 @@ cd ansible
 pip3 install .
 ----
 
-==== 1.11 Instalar Docker
+=== 1.11 Instalar Docker
 
 [source,bash]
 ----
@@ -225,7 +225,7 @@ systemctl enable docker
 systemctl start docker
 ----
 
-==== 1.12 Configuração do Docker para o Kolla
+=== 1.12 Configuração do Docker para o Kolla
 
 :warning: *Não necessário para a versões do Docker >= 18.09*
 
@@ -247,12 +247,12 @@ systemctl daemon-reload
 systemctl restart docker
 ----
 
-=== 2. Procedimentos específicos no CONTROLADOR
+== 2. Procedimentos específicos no CONTROLADOR
 
 :warning: Nota: > Novamente, todo o processo de instalação teve como base o
 usuário _root_ e o diretório _/root/_
 
-==== 2.1 Instalar Kolla
+=== 2.1 Instalar Kolla
 
 [source,bash]
 ----
@@ -262,7 +262,7 @@ cd kolla
 pip3 install .
 ----
 
-==== 2.2 Instalar Kolla-Ansible
+=== 2.2 Instalar Kolla-Ansible
 
 [source,bash]
 ----
@@ -272,7 +272,7 @@ cd kolla-ansible
 pip3 install .
 ----
 
-==== 2.3 Geração da chave ssh e inserção nos nós para os usuários _root_ e _stack_
+=== 2.3 Geração da chave ssh e inserção nos nós para os usuários _root_ e _stack_
 
 Para o usuário _root_:
 
@@ -297,7 +297,7 @@ ssh-copy-id stack@openstack-compute01
 exit
 ----
 
-==== 2.4 Configuração do kolla
+=== 2.4 Configuração do kolla
 
 Copiar os arquivos: - `globals.yml` para `/etc/kolla/globals.yml` -
 `passwords.yml` para `/etc/kolla/passwords.yml` - `multinode` para `/root/`
@@ -313,7 +313,7 @@ cp -r ./kolla-ansible/etc/kolla /etc/kolla/
 cp ~/kolla-ansible/ansible/inventory/* .
 ----
 
-==== 2.5 Geração das senhas do kolla
+=== 2.5 Geração das senhas do kolla
 
 [source,bash]
 ----
@@ -321,7 +321,7 @@ cd /root/kolla-ansible/tools
 python3 generate_passwords.py
 ----
 
-==== 2.6 Configuração dos hosts para o ansible
+=== 2.6 Configuração dos hosts para o ansible
 
 Criar o arquivo _/etc/ansible/hosts_ com o seguinte conteúdo.
 
@@ -333,7 +333,7 @@ openstack-controller
 openstack-compute01
 ....
 
-==== 2.7 Alterar as senhas necessárias no arquivo _/etc/kolla/passwords.yml_
+=== 2.7 Alterar as senhas necessárias no arquivo _/etc/kolla/passwords.yml_
 
 [source,bash]
 ----
@@ -344,7 +344,7 @@ grafana_admin_password: grafanaadmin
 keystone_admin_password: keystoneadmin
 ----
 
-==== 2.8 Configurar o arquivo _/etc/kolla/globals.yml_
+=== 2.8 Configurar o arquivo _/etc/kolla/globals.yml_
 
 No arquivo `/etc/kolla/globals.yml`, alterar os parâmetros abaixo.
 
@@ -384,7 +384,7 @@ testado não foi possível realizar essa configuração devido a limitaçãoes d
 rede. > >- Os valores padrões dos outros parâmetros estão descritos nas linhas
 comentadas do arquivo.
 
-==== 2.9 Configurar o arquivo _/root/multinode_
+=== 2.9 Configurar o arquivo _/root/multinode_
 
 No arquivo `/root/multinode`, configurar os grupos de hosts conforme abaixo. Os
 demais não são alterados.
@@ -409,13 +409,13 @@ localhost
 :warning: Nota: >A instalação não utilizou storage, por isso o host `storage01`
 foi comentado e o módulo cinder não foi instalado.
 
-==== 2.10 Checar a configuração do multinode com o ansible
+=== 2.10 Checar a configuração do multinode com o ansible
 
 ....
 ansible -i /root/multinode all -m ping
 ....
 
-==== 2.11 Revisão da configuração do kolla-ansible e deploy
+=== 2.11 Revisão da configuração do kolla-ansible e deploy
 
 Foram usados os comandos para `development`.
 
@@ -453,7 +453,7 @@ cd /root/kolla-ansible/tools/
 #kolla-ansible -i multinode post-deploy
 ----
 
-==== 2.12 Instalar os clientes do OpenStack
+=== 2.12 Instalar os clientes do OpenStack
 
 Os clientes foram instalados a partir do repositório do próprio CentOS.
 
@@ -482,14 +482,14 @@ Caso o pacote `centos-release-openstack-victoria` não esteja disponível,
 instalar o repositório RDO com os clientes da release Victoria. +
 `dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm`
 
-==== 2.13 Acessar o Horizon
+=== 2.13 Acessar o Horizon
 
 URL: `http://192.168.0.200`
 
 Usuário: `admin` +
   Senha: `keystoneadmin`
 
-==== 2.14 Tunning Ansible (Opcional)
+=== 2.14 Tunning Ansible (Opcional)
 
 Para melhores resultados, realizar a seguinte configuração do Ansible antes do
 item 2.11 (revisão da configuração e _deploy_).
@@ -510,7 +510,7 @@ de exemplo do ansible no github].
 
 :warning: Nota: >Esta configuração *não foi realizada* na instalação
 
-=== 3. Scripts para automatizar parte dos processos
+== 3. Scripts para automatizar parte dos processos
 
 Os scripts a seguir foram escritos para automatizar ao máximo o processo de
 instalação.
@@ -518,7 +518,7 @@ instalação.
 * `1-install-common-all-nodes-victoria.sh`
 * `2-install-controller-victoria.sh`
 
-==== 3.1 Script `1-install-common-all-nodes-victoria.sh` (para todos os nós)
+=== 3.1 Script `1-install-common-all-nodes-victoria.sh` (para todos os nós)
 
 Este script realiza os procedimentos comuns a todos nós, *exceto* os itens *1.1*
 (atualização do SO) e *1.7* (configuração da interface da rede _provider_), pois
@@ -539,7 +539,7 @@ COMPUTE01_HOSTNAME="openstack-compute01"
 COMPUTE01_IP="192.168.0.201"
 ----
 
-==== 3.2 Script `2-install-controller-victoria.sh` (para o controlador)
+=== 3.2 Script `2-install-controller-victoria.sh` (para o controlador)
 
 No script, ajustar os hosts conforne necessário nos itens *2.3* e *2.6*.
 
@@ -548,9 +548,9 @@ executados por este script os itens *2.1 ao 2.6*, e o item *2.12*.
 
 *Deve ser executado após* o script `1-install-common-all-nodes-victoria.sh`.
 
-=== 4. Criação das redes no Horizon
+== 4. Criação das redes no Horizon
 
-==== 4.1 Rede provider
+=== 4.1 Rede provider
 
 Apenas administradores podem criar redes provider. A rede provider deve ter os
 seguintes parâmetros:
@@ -624,7 +624,7 @@ image:imagens/horizon-provider-subnet.png[Provider-Subnet]
 
 image:imagens/horizon-provider-subnet-details.png[Provider-Subnet-Details]
 
-==== 4.2 Redes privadas
+=== 4.2 Redes privadas
 
 As redes internas (privadas) podem ser criadas pelos usuários, dentro dos
 projetos (*Recomendado*).
@@ -641,7 +641,7 @@ image:imagens/horizon-private-subnet.png[Private-Subnet]
 
 image:imagens/horizon-private-subnet-details.png[Private-Subnet-Details]
 
-=== 5. Roteadores e Instâncias
+== 5. Roteadores e Instâncias
 
 [source,diff]
 ----
@@ -654,12 +654,12 @@ entre as redes.
 
 Posteriormente, pode-se criar as instâncias (máquinas virtuais).
 
-=== 6. Grupos de Segurança
+== 6. Grupos de Segurança
 
 A instalação cria apenas um grupo de segurança com o nome `default`. Este grupo
 possiu regras apenas para tráfego de saída das máquinas virtuais.
 
-=== 7. IPs Flutuantes
+== 7. IPs Flutuantes
 
 Na subnet da rede provider, o parâmetro `Allocation Pools` é utlizadao pelo DHCP
 e para fornecer os `Floating IPs`.
@@ -667,7 +667,7 @@ e para fornecer os `Floating IPs`.
 O Floating IP funciona mesmo com o DHCP desabilitado, bastando informar o range
 de IPs.
 
-=== 8. Módulos
+== 8. Módulos
 
 Os módulos do OpenStack podem ser habilitados após o _deploy_, porém será
 baixada a imagem do docker mais recente do módulo para a release utilizada
@@ -708,7 +708,7 @@ cd /root/kolla-ansible/tools/
 ./kolla-ansible -i ../../multinode reconfigure
 ----
 
-==== 8.1 Ceilometer / Gnocchi - Default Archive Policy
+=== 8.1 Ceilometer / Gnocchi - Default Archive Policy
 
 Por padrão o as políticas de arquivo (_Archive Policy_) criadas pelo Ceilometer
 no Gnocchi é `low`. Para alterar a política para `high`, deve-se criar os
@@ -757,7 +757,7 @@ Rocky]: `gnocchi://?archive_policy=high` > -
 https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html#install-and-configure-components[Release
 Victoria]: `gnocchi://?filter_project=service&archive_policy=low`
 
-=== 9. Adicionar um Nó de Computação
+== 9. Adicionar um Nó de Computação
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
 
@@ -802,14 +802,14 @@ multinode (Deploy a registry)]. +
 Porém, esse recurso *não foi utlizado*. Durante o `pull` as imagens foram
 baixadas novamente do Docker Hub.
 
-=== 10. Remover um Nó de Computação
+== 10. Remover um Nó de Computação
 
 [source,diff]
 ----
 -TODO
 ----
 
-=== 11. Atualizar as imagens docker da release instalada
+== 11. Atualizar as imagens docker da release instalada
 
 Para atualizar as imagens docker dos módulos do OpenStack, seguir os segintes
 passos.
@@ -822,7 +822,7 @@ passos.
 . Remover as imagens antigas:
 `bash  ./kolla-ansible -i ../../multinode prune-images --yes-i-really-really-mean-it`
 
-=== 12. TLS
+== 12. TLS
 
 https://docs.openstack.org/kolla-ansible/victoria/admin/tls.html[Documentação
 TLS]
@@ -900,13 +900,14 @@ IP externo será diferente do IP interno. Neste caso, deve-se adicionar o
 parâmetro `--insecure` na linha de comando dos clientes do OpenStack. O
 parâmetro `--insecure` desabilita a verificação do certificado.
 
-=== 13. Upgrade de versão
+== 13. Upgrade de versão
 
-______
-`TODO`
-______
+[source,diff]
+----
+-TODO
+----
 
-=== 14. Destruir a nuvem
+== 14. Destruir a nuvem
 
 :warning: *CUIDADO!*
 
@@ -920,7 +921,7 @@ Após o comando de _destroy_ é necessário um novo _deploy_.
 ./kolla-ansible -i ../../multinode destroy --yes-i-really-really-mean-it
 ----
 
-=== 15. Estudos e configurações futuras
+== 15. Estudos e configurações futuras
 
 * Configurar MTU para Jumbo Frames;
 * Colocar o `kolla_external_vip_address` na interface da rede `provider`. Para
