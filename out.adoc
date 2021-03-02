@@ -25,7 +25,7 @@ https://docs.openstack.org/neutron/victoria/admin/config-mtu.html[MTU
 considerations]
 
 Diretórios do repositório: +
-&#9;- `arquivos-conf`- contém os arquivos de configuração utilizados na instalação +
+\t `arquivos-conf`- contém os arquivos de configuração utilizados na instalação +
 - `imagens` - contém os diagramas de rede da documentação
 
 == Limitações
