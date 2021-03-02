@@ -250,8 +250,8 @@ systemctl start docker
 
 [WARNING]
 ====
-Não necessário para a versões do Docker >= 18.09. https://docs.docker.com/engine/release-notes/18.09/#18090[Docker 18.09 Reelase] +
-A configuração foi removida pelo kolla-ansible durante o deploy.
+- Não necessário para a versões do Docker >= 18.09. https://docs.docker.com/engine/release-notes/18.09/#18090[Docker 18.09 Reelase].
+- A configuração foi removida pelo kolla-ansible durante o deploy.
 ====
 
 Criar o arquivo de configuração do kolla no systemd:
