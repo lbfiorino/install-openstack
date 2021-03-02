@@ -726,7 +726,6 @@ As métricas com *Archive Policy* `high` serão criadas para as novas instância
 > - [Release Victoria](https://docs.openstack.org/ceilometer/victoria/install/install-base-rdo.html#install-and-configure-components): `gnocchi://?filter_project=service&archive_policy=low`
 
 
-
 ## 9. Adicionar um Nó de Computação
 
 Os nomes das interfaces de rede devem ser iguais aos demais nós.
@@ -736,7 +735,6 @@ Host: **openstack-compute02**
 - Interface **enp0s8**: 192.168.254.202/24 (*Provider*)
 
 Passos: 
-
 
 - Seguir os procedimentos do **item 1**, comuns a todos os nós.
 
