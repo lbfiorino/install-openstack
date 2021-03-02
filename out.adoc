@@ -1,5 +1,5 @@
 :toc:
-:toc-title: Sumário
+:toc-title:
 
 = Instalação do OpenStack Multi-Nó com Kolla-Ansible :cloud:
 
