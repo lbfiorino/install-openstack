@@ -103,9 +103,9 @@ image:imagens/infraestrutura.svg[Infraestrutura]
 image:imagens/infra-virtual.svg[Infraestrutura-Virtual]
 
 [WARNING]
-&#8658; No VirtualBox, configurar o Modo Promíscuo nas interfaces de rede das VMs para ``Permitir Tudo''. + 
-&#8658; No Hyper-V é necessário habilitar a falsificação de endereço MAC (MAC Spoofing) nas interfaces das máquinas virtuais que estão na rede _provider_. + 
-&#8658; Em caso de problema no _pull_ das imagens do docker, verificar o MTU da rede.
+&#8594; No VirtualBox, configurar o Modo Promíscuo nas interfaces de rede das VMs para ``Permitir Tudo''. + 
+&#8594; No Hyper-V é necessário habilitar a falsificação de endereço MAC (MAC Spoofing) nas interfaces das máquinas virtuais que estão na rede _provider_. + 
+&#8594; Em caso de problema no _pull_ das imagens do docker, verificar o MTU da rede.
 
 == 1. Procedimentos comuns a TODOS OS NÓS
 
