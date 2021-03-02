@@ -1,3 +1,6 @@
+:toc:
+:toc-title:
+
 = Instalação do OpenStack Multi-Nó com Kolla-Ansible :cloud:
 
 // settings:
@@ -19,9 +22,6 @@ endif::[]
 //:release-version: 2.0
 // URIs:
 :uri-openstasck-releases: https://releases.openstack.org/
-
-:toc:
-:toc-title:
 
 == OpenStack Release: Victoria
 
