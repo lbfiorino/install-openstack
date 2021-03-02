@@ -78,7 +78,8 @@ As máquinas virtuais (_controller_ e _compute01_) foram configuradas com duas
 interfaces de rede em modo bridge, uma na rede interna (_management_) e outra na
 rede do roteador da operadora (_provider_).
 
-:WARNING Não foi utlizado Vlan nas redes.
+[CAUTION]
+Não foi utlizado Vlan nas redes.
 
 === Configuração da rede
 
