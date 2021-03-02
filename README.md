@@ -477,7 +477,7 @@ dnf install centos-release-openstack-victoria
 dnf -y upgrade
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
-dnf install python3-networking-sfc.noarch
+dnf install python3-networking-sfc
 ```
 Para o cliente do Gnocchi funcionar é preciso adicionar a linha baixo no arquivo OpenRC fornecido pelo Horizon. Ex: `admin-openrc.sh`
 ```bash
