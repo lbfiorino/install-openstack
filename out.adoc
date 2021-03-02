@@ -24,9 +24,9 @@ https://docs.openstack.org/releasenotes/ceilometer/[Ceilometer Release Notes]
 https://docs.openstack.org/neutron/victoria/admin/config-mtu.html[MTU
 considerations]
 
-Diretórios do repositório:
-* `arquivos-conf`- contém os arquivos de configuração utilizados na instalação;
-* `imagens` - contém os diagramas de rede da documentação.
+Diretórios do repositório: +
+- `arquivos-conf`- contém os arquivos de configuração utilizados na instalação; +
+- `imagens` - contém os diagramas de rede da documentação.
 
 == Limitações
 
