@@ -639,7 +639,7 @@ Capturas de tela:
 ## 5. Roteadores e Instâncias
 ```diff
 -TODO
-Adicionar prints para criar roteador
+Adicionar prints.
 ```
 Com as redes criadas, é preciso criar um roteador para permitir a comunicação entre as redes.  
 
