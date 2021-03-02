@@ -110,8 +110,8 @@ image:imagens/infra-virtual.svg[Infraestrutura-Virtual]
 ====
 == 1. Procedimentos comuns a TODOS OS NÓS
 
-:warning: Nota: > Todo o processo de instalação teve como base o usuário _root_
-e o diretório _/root/_
+[WARNING]
+Todo o processo de instalação teve como base o usuário _root_ e o diretório _/root/_.
 
 === 1.1 Atualizar o sistema operacional
 
