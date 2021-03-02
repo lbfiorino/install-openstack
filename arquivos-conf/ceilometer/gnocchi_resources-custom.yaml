@@ -1,4 +1,8 @@
 ---
+# CUSTOM ARCHIVE POLICIES
+#   - ceilometer-custom
+#   - ceilometer-custom-rate
+
 # archive_policy_default: ceilometer-low
 archive_policy_default: ceilometer-custom
 archive_policies:
@@ -67,7 +71,7 @@ archive_policies:
         timespan: 1 day
       - granularity: 1 hour
         timespan: 365 days
-
+  # End custom policy
 
 resources:
   - resource_type: identity
