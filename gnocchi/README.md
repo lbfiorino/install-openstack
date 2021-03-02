@@ -67,6 +67,7 @@ gnocchi aggregates '(/ (aggregate rate:mean (metric cpu mean)) 1000000000.0)' id
 | Granularidade | Dividir por |
 | :--- | ---: |
 | 1.0 | 1000000000.0 |
+| 5.0 | 5000000000.0 |
 | 60.0 |  60000000000.0 |
 | 3600.0 | 3600000000000.0 |
 
