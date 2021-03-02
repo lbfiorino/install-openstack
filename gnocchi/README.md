@@ -1,4 +1,4 @@
-# Gnocchi - Calcular _rate_ a partir da Release Stein
+# Gnocchi - Calcular métricas _cpu_util_ e *.rate_rate_ a partir da Release Stein
 Algumas métricas foram descontinuadas a partir da release Stein. Com isso é preciso utilizar as funções do Gnocchi para calumar essas métricas.  
 [Lista de métricas descontinuadas - Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)  
 [Deprecation Notes- Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#deprecation-notes)
