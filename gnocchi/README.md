@@ -23,7 +23,7 @@ Algumas métricas foram descontinuadas a partir da release Stein. Com isso é pr
 ## Ex: Calcular cpu_util em %
 `<server-id>` é o resource id da instância no gnocchi.
 
-### Mostra as coletas em NS (nanosegundos) Victoria release
+### Mostrar as coletas em NS (nanosegundos) Victoria release
 ```bash
 # Default: MEAN
 gnocchi measures show --resource-id <server-id> cpu
