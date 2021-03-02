@@ -250,7 +250,7 @@ systemctl start docker
 
 [WARNING]
 ====
-- Não necessário para a versões do Docker >= 18.09. https://docs.docker.com/engine/release-notes/18.09/#18090[Docker 18.09 Reelase].
+- Não necessário para a versões do Docker *>= 18.09*. https://docs.docker.com/engine/release-notes/18.09/#18090[Docker 18.09 Reelase].
 - A configuração foi removida pelo kolla-ansible durante o deploy.
 ====
 
@@ -271,8 +271,8 @@ systemctl restart docker
 
 == 2. Procedimentos específicos no CONTROLADOR
 
-:warning: Nota: > Novamente, todo o processo de instalação teve como base o
-usuário _root_ e o diretório _/root/_
+[WARNING]
+Novamente, todo o processo de instalação teve como base o usuário _root_ e o diretório _/root/_.
 
 === 2.1 Instalar Kolla
 
@@ -392,19 +392,14 @@ enable_tacker: "yes"
 
 ----
 
-:warning: Notas: >- Em ambiente virtualizado mudar o tipo de virtualização para
-QEMU: +
->`nova_compute_virt_type: "qemu"` +
-> >- O parâmetro `kolla_internal_vip_address` requer um *IP não utilizado* na
-rede. Este IP será o de acesso a API. O Kolla-Ansible não aceitou colocar o
-mesmo IP da interface interna. > >- Caso o parâmetro
-`kolla_external_vip_address` (IP de acesso externo a API) seja habilitado, nesta
-instalação, o IP externo ficará na mesma interface da `rede Management` e o
-acesso externo deve ser feito por NAT 1:1. O ideal é configurar o parâmentro
-`kolla_external_vip_interface` para separar o tráfego. Porém, no ambiente
-testado não foi possível realizar essa configuração devido a limitaçãoes da
-rede. > >- Os valores padrões dos outros parâmetros estão descritos nas linhas
-comentadas do arquivo.
+[WARNING]
+====
+- Em ambiente virtualizado mudar o tipo de virtualização para QEMU: `nova_compute_virt_type: "qemu"`.
+- O parâmetro `kolla_internal_vip_address` requer um *IP não utilizado* na rede. Este IP será o de acesso a API. O Kolla-Ansible não aceitou colocar o mesmo IP da interface interna.
+- Caso o parâmetro `kolla_external_vip_address` (IP de acesso externo a API) seja habilitado, nesta instalação, o IP externo ficará na mesma interface da `rede Management` e o
+acesso externo deve ser feito por NAT 1:1. O ideal é configurar o parâmentro `kolla_external_vip_interface` para separar o tráfego. Porém, no ambiente testado não foi possível realizar essa configuração devido a limitaçãoes da rede.
+- Os valores padrões dos outros parâmetros estão descritos nas linhas comentadas do arquivo.
+====
 
 === 2.9 Configurar o arquivo _/root/multinode_
 
@@ -428,8 +423,8 @@ localhost
 #storage01
 ....
 
-:warning: Nota: >A instalação não utilizou storage, por isso o host `storage01`
-foi comentado e o módulo cinder não foi instalado.
+[WARNING]
+A instalação não utilizou storage, por isso o host `storage01` foi comentado e o módulo cinder não foi instalado.
 
 === 2.10 Checar a configuração do multinode com o ansible
 
@@ -445,10 +440,12 @@ Para melhores resultados, o item *2.14 Tunning Ansible* mostra alguns parâmetro
 de performance do Ansible, que devem ser configurados antes de executar os
 comandos abaixo.
 
-:warning: *ATENÇÃO:* >- Caso seja necessário habilitar outros módulos, leia o
-*item 8* antes de realizar o _deploy_; >- Para habilitar o TLS, leia o *item 12*
-antes de realizar o _deploy_.
-
+[CAUTION]
+====
+Atenção!:: 
+- Caso seja necessário habilitar outros módulos, leia o *item 8* antes de realizar o _deploy_;
+- Para habilitar o TLS, leia o *item 12* antes de realizar o _deploy_.
+====
 [source,bash]
 ----
 # For development:
@@ -497,12 +494,12 @@ OpenRC fornecido pelo Horizon. Ex: `admin-openrc.sh`
 export OS_AUTH_TYPE=password
 ----
 
-:warning: Nota: >- O cliente do Gnocchi instalado via PIP apresentou problemas.
-Retornou o erro _``Not Acceptable (406)''_ para o comando `delete`. > >- Para
-evitar conflitos, instalar todos os clientes a partir do mesmo repositório. > >-
-Caso o pacote `centos-release-openstack-victoria` não esteja disponível,
-instalar o repositório RDO com os clientes da release Victoria. +
-`dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm`
+[WARNING]
+====
+- O cliente do Gnocchi instalado via PIP apresentou problemas. Retornou o erro _Not Acceptable (406)_ para o comando `delete`.
+- Para evitar conflitos, instalar todos os clientes a partir do mesmo repositório. 
+- Caso o pacote `centos-release-openstack-victoria` não esteja disponível, instalar o repositório RDO com os clientes da release Victoria: `dnf install -y https://www.rdoproject.org/repos/openstack/openstack-victoria/rdo-release-victoria-2.el8.noarch.rpm`
+====
 
 === 2.13 Acessar o Horizon
 
