@@ -62,7 +62,7 @@ gnocchi aggregates '(aggregate rate:mean (metric cpu mean))' id=<server-id>
 gnocchi aggregates '(/ (aggregate rate:mean (metric cpu mean)) 1000000000.0)' id=<server-id>
 ```
 
-### Converter para percentual
+### Converter para %
 :warning: **Atenção com a Granularidade**:
 | Granularidade | Dividir por |
 | :--- | ---: |
