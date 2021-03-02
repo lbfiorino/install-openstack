@@ -163,17 +163,20 @@ dnf install -y epel-release
 dnf config-manager --set-enabled powertools
 dnf -y upgrade
 
+# Requisitos Python
+dnf install -y python3-pip
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade setuptools
+python3 -m pip install six requests httplib2 --upgrade
+
 ## Requisitos Kolla-Ansible
 dnf install -y python3-devel libffi-devel gcc openssl-devel python3-libselinux
 
-# (Opcional)
+# Development Tools
 dnf group install -y "Development Tools"
 
 # Utilitários
-dnf install -y git python3-pip wget curl telnet wireshark-cli tcpdump net-tools htop dstat nano
-
-python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade setuptools
+dnf install -y git wget curl telnet wireshark-cli tcpdump net-tools htop dstat nano
 ```
 
 
