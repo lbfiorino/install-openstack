@@ -669,6 +669,8 @@ image:imagens/horizon-private-subnet-details.png[Private-Subnet-Details]
 -TODO
 Adicionar prints para criar roteador
 ----
+.TODO list
+- Adicionar prints para criar roteador
 
 Com as redes criadas, é preciso criar um roteador para permitir a comunicação
 entre as redes.
