@@ -20,11 +20,11 @@ Algumas métricas foram descontinuadas a partir da release Stein. Com isso é pr
 1. [How I Learned to Stop Worrying and Love Gnocchi aggregation](https://berndbausch.medium.com/how-i-learned-to-stop-worrying-and-love-gnocchi-aggregation-c98dfa2e20fe)  
 2. [OpenStack get vm cpu_util with Stein version](https://stackoverflow.com/questions/56216683/openstack-get-vm-cpu-util-with-stein-version)
 
-## Ex: Calcular cpu_util em %
+## Ex: Calcular _cpu_util_ em %
 O `<server-id>` nos comando abaixo é o _id_ da instância no Openstack, que pode ser recuperado através do comando `openstack server list`.  
 O _id_ da instância no OpenStack é o _resource-id_ da instância no gnocchi.
 
-### Mostrar as coletas em NS (nanosegundos) Victoria release
+### Mostrar as coletas em _ns_ (nanosegundos)
 ```bash
 # Default: MEAN
 gnocchi measures show --resource-id <server-id> cpu
@@ -33,7 +33,7 @@ gnocchi measures show --resource-id <server-id> cpu
 gnocchi measures show --resource-id  <server-id> cpu --aggregation mean
 ```
 
-### Usando a função de agregação rate:mean
+### Usando a função de agregação _rate:mean_
 Para os comandos abaixo é preciso que a Archive Policy tenha o método de agregação `rate:mean`.  
 Útil para Achive Police `ceilometer-high-rate` e `ceilometer-low-rate`.
 ```bash
@@ -44,7 +44,7 @@ gnocchi aggregates '(metric cpu rate:mean)' id=<uuid>
 ```
 Caso a Archive Policy não tenha o método de agregação `rate:mean`, utilizar o comando `gnocchi aggregates` a seguir.
 
-## Usando gnocchi aggregates
+## Usando _gnocchi aggregates_
 
 ### Mostra as coletas
 ```bash
@@ -52,7 +52,7 @@ Caso a Archive Policy não tenha o método de agregação `rate:mean`, utilizar 
 gnocchi aggregates '(metric cpu mean)' id=<server-id>
 ```
 
-### Calcular a taxa (rate) em nanosegundos
+### Calcular a taxa (_rate_) em nanosegundos
 ```bash
 gnocchi aggregates '(aggregate rate:mean (metric cpu mean))' id=<server-id>
 ```
