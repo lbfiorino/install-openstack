@@ -79,7 +79,7 @@
 
 
 ## Limitações
-- A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
+A instalação não cria automaticamente as redes dentro do OpenStack. A configuração deve ser feita de forma manual no Horizon ou pela linha de comando;  
 
 
 ## Requisitos mínimos de hardware
