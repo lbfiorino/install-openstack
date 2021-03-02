@@ -21,7 +21,7 @@ Algumas métricas foram descontinuadas a partir da release Stein. Com isso é pr
 2. [OpenStack get vm cpu_util with Stein version](https://stackoverflow.com/questions/56216683/openstack-get-vm-cpu-util-with-stein-version)
 
 ## Ex: Calcular cpu_util em %
-`<server-id>` é o _resource-id_ da instância no gnocchi.
+`<server-id>` é o _id_ da instância retornada pelo comando `openstack server list`. Esse _id_ é o _resource-id_ da instância no gnocchi.
 
 ### Mostrar as coletas em NS (nanosegundos) Victoria release
 ```bash
