@@ -2,16 +2,16 @@
 Algumas métricas foram descontinuadas a partir da release Stein. Com isso é preciso utilizar as funções do Gnocchi para calcular essas métricas.
 
 ### [Lista de métricas descontinuadas - Release Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes):
-- The deprecated disk.* meters have been removed. Use the disk.device.* meters instead.
-- **The deprecated meter for compute where removed:**
-  - disk.read.requests.rate
-  - disk.write.requests.rate
-  - disk.read.bytes.rate
-  - disk.write.bytes.rate
-  - disk.device.read.requests.rate
-  - disk.device.write.requests.rate
-  - disk.device.read.bytes.rate
-  - disk.device.write.bytes.rate
+- _The deprecated disk.* meters have been removed. Use the disk.device.* meters instead._
+- _**The deprecated meter for compute where removed:**_
+  - _disk.read.requests.rate_
+  - _disk.write.requests.rate_
+  - _disk.read.bytes.rate_
+  - _disk.write.bytes.rate_
+  - _disk.device.read.requests.rate_
+  - _disk.device.write.requests.rate_
+  - _disk.device.read.bytes.rate_
+  - _disk.device.write.bytes.rate_
 
 ### [Deprecation Notes - Release Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#deprecation-notes):
 - _cpu_util and *.rate meters are deprecated and will be removed in future release in favor of the Gnocchi rate calculation equivalent._
