@@ -159,15 +159,15 @@ reboot
 ### 1.2 Requisitos básicos
 
 ```bash
-dnf install -y epel-release
-dnf config-manager --set-enabled powertools
+dnf install -y dnf-plugins-core epel-release
+dnf config-manager --set-enabled PowerTools
 dnf -y upgrade
 
 # Requisitos Python
 dnf install -y python3-pip
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade setuptools
-python3 -m pip install six requests httplib2 --upgrade
+python3 -m pip install --upgrade six requests
 
 ## Requisitos Kolla-Ansible
 dnf install -y python3-devel libffi-devel gcc openssl-devel python3-libselinux
@@ -480,7 +480,7 @@ dnf install centos-release-openstack-victoria
 dnf -y upgrade
 dnf install python3-openstackclient
 dnf install python3-gnocchiclient
-dnf install python3-networking-sfc
+dnf install python3-neutron python3-networking-sfc
 ```
 Para o cliente do Gnocchi funcionar é preciso adicionar a linha baixo no arquivo OpenRC fornecido pelo Horizon. Ex: `admin-openrc.sh`
 ```bash
