@@ -1,7 +1,7 @@
 # Gnocchi - Calcular métricas _cpu_util_ e _*.rate_ a partir da Release Stein
 Algumas métricas foram descontinuadas a partir da release Stein. Com isso é preciso utilizar as funções do Gnocchi para calcular essas métricas.
 
-### [Upgrade Notes - Release Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes):
+### [Upgrade Notes - Release Stein](https://docs.openstack.org/releasenotes/ceilometer/stein.html#relnotes-12-0-0-stable-stein-upgrade-notes)
 - _The deprecated disk.* meters have been removed. Use the disk.device.* meters instead._
 - _**The deprecated meter for compute where removed:**_
   - _disk.read.requests.rate_
@@ -13,7 +13,7 @@ Algumas métricas foram descontinuadas a partir da release Stein. Com isso é pr
   - _disk.device.read.bytes.rate_
   - _disk.device.write.bytes.rate_
 
-### [Deprecation Notes - Release Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#deprecation-notes):
+### [Deprecation Notes - Release Rocky](https://docs.openstack.org/releasenotes/ceilometer/rocky.html#deprecation-notes)
 - _cpu_util and *.rate meters are deprecated and will be removed in future release in favor of the Gnocchi rate calculation equivalent._
 
 ## Referências
