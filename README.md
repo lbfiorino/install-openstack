@@ -407,29 +407,30 @@ enable_tacker: "yes"
 
 ### 2.9 Configurar o arquivo */root/multinode*
 No arquivo `/root/multinode`, configurar os grupos de hosts conforme abaixo. Os demais não são alterados.
+```bash
+[control]
+localhost
 
-	[control]
-	localhost
+[network]
+localhost
 
-	[network]
-	localhost
+[compute]
+openstack-compute01 ansible_ssh_user=stack ansible_sudo_pass=stack ansible_become=True ansible_private_key_file=/home/stack/.ssh/id_rsa
 
-	[compute]
-	openstack-compute01 ansible_ssh_user=stack ansible_sudo_pass=stack ansible_become=True ansible_private_key_file=/home/stack/.ssh/id_rsa
+[monitoring]
+localhost
 
-	[monitoring]
-	localhost
-
-	[storage]
-	#storage01
-
+[storage]
+#storage01
+```
 :warning: Nota:
 >A instalação não utilizou storage, por isso o host `storage01` foi comentado e o módulo cinder não foi instalado.
 
 
 ### 2.10 Checar a configuração do multinode com o ansible
-	ansible -i /root/multinode all -m ping
-
+```bash
+ansible -i /root/multinode all -m ping
+```
 
 ### 2.11 Revisão da configuração do kolla-ansible e deploy
 Foram usados os comandos para `development`.
