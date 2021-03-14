@@ -4,6 +4,8 @@ As redes VXLAN tem o MTU padrão de 1450.
 1450 + 50bytes VXLAN header = 1500.  
 Para evitar fragmentação o MTU foi alterado para 1550.  
 
+⚠️ Para funcionar a rede física `Management` precisa ter MTU>=1550. A interface de rede em todos os nós precisa estar configurada com MTU>=1550.
+
 #### Arquivos
 - `/etc/kolla/config/neutron.conf`  
 Este aquivo altera o MTU padrão para 1550.  
