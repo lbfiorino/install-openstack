@@ -1,6 +1,6 @@
 ### Configuração do neutron para mudar o MTU das redes VXLAN.
 
-As redes VXLAN tem o MTU padrão de 1450. ⇒ 1450 + 50bytes VXLAN header = 1500.  
+As redes VXLAN tem o MTU padrão de 1450. ➔ 1450 + 50bytes VXLAN header = 1500.  
 Para evitar fragmentação o MTU foi alterado para 1550.  
 Se precisar de VLAN no pacote original (dentro da VXLAN), aumentar o MTU para 1554.
 
