@@ -14,8 +14,8 @@ Este aquivo altera o MTU padrão para 1550.
 # File neutron.conf
 
 # global_physnet_mtu : MTU of the underlying physical network. Neutron uses this value to calculate MTU for all virtual network components.
-#                       For flat and VLAN networks, neutron uses this value without modification.
-#                       For overlay networks such as VXLAN, neutron automatically subtracts the overlay protocol overhead from this value. Defaults to 1500, the standard value for Ethernet.
+#                      For flat and VLAN networks, neutron uses this value without modification.
+#                      For overlay networks such as VXLAN, neutron automatically subtracts the overlay protocol overhead from this value. Defaults to 1500, the standard value for Ethernet.
 
 [DEFAULT]
 global_physnet_mtu = 1550
