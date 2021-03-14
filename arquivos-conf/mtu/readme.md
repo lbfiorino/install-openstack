@@ -21,7 +21,7 @@ global_physnet_mtu = 1550
 ```
 
 - `/etc/kolla/config/neutron/ml2_conf.ini`  
-Este arquivo altera o path_mtu (tamanho máximo do pacote IP) para 1550, mas mantém o MTU da rede provider e 1500.  
+Este arquivo altera o *path_mtu* (tamanho máximo do pacote IP) para 1550, mas mantém o MTU da rede provider e 1500.  
 
 ``` bash
 # File ml2_conf.ini
