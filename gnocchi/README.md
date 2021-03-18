@@ -21,7 +21,8 @@ Algumas métricas foram descontinuadas a partir da release Stein. Com isso é pr
 2. [OpenStack get vm cpu_util with Stein version](https://stackoverflow.com/questions/56216683/openstack-get-vm-cpu-util-with-stein-version)
 
 ## Ex: Calcular _cpu_util_ em %
-⚠️**ATENÇÃO:** O Ceilometer soma todos os tempos de CPU. Ao final do cálculo é preciso dividir pelo número de vCPUS da instância.  
+⚠️**ATENÇÃO:** O Ceilometer soma todos os tempos de CPU. Ao final do cálculo é preciso dividir pelo número de vCPUS da instância.
+
 O `<server-id>` nos comando abaixo é o _id_ da instância no Openstack, que pode ser recuperado através do comando `openstack server list`.  
 O _id_ da instância no OpenStack é o _resource-id_ da instância no gnocchi.
 
