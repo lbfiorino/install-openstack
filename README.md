@@ -880,6 +880,10 @@ Após o comando de *destroy* é necessário um novo *deploy*.
 
 Para alterar o MTU das redes no OpenStack, seguir as configurações contidas no diretório [**arquivos-conf/mtu**](arquivos-conf/mtu).
 
+**Referências MTU:**
+- https://docs.openstack.org/neutron/victoria/admin/config-mtu.html
+- https://serverascode.com/2017/06/06/neutron-vxlan-tenant-mtu-1500.html
+
 ## 16. Estudos e configurações futuras
 
 - Colocar o `kolla_external_vip_address` na interface da rede `provider`. Para separar o tráfego interno/externo à API;
