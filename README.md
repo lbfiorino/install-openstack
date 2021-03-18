@@ -875,9 +875,11 @@ Após o comando de *destroy* é necessário um novo *deploy*.
 ./kolla-ansible -i ../../multinode destroy --yes-i-really-really-mean-it
 ```
 
-## 15. Estudos e configurações futuras
+## 15. MTU
 
-- Configurar MTU para Jumbo Frames;
+Para alterar o MTU das redes no OpenStack, seguir as configurações contidas no diretório [**arquivos-conf/mtu**](arquivos-conf/mtu).
+
+## 16. Estudos e configurações futuras
 
 - Colocar o `kolla_external_vip_address` na interface da rede `provider`. Para separar o tráfego interno/externo à API;
 
