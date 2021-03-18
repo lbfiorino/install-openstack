@@ -77,3 +77,4 @@ gnocchi aggregates '(/ (aggregate rate:mean (metric cpu mean)) 1000000000.0)' id
 # Para granularidade 60.0
 gnocchi aggregates '(* (/ (aggregate rate:mean (metric cpu mean)) 60000000000.0) 100)' id=<server-id>
 ```
+⚠️ Dividir o resultado pelo número de vcpus.
