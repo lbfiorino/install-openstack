@@ -37,6 +37,7 @@ auth = v3.Password(auth_url=IDENTITY_API,
                    user_domain_name=USER_DOMAIN_NAME,
                    project_domain_id=PROJECT_DOMAIN_ID)
 # Create a session with the credentials
+# param verify : False when using self-signed certificates
 sess = session.Session(auth=auth, verify=False)
 # Create nova client with the session created
 nova = nova_client.Client(version='2.1', session=sess)
