@@ -38,7 +38,7 @@ auth = v3.Password(auth_url=IDENTITY_API,
                    project_domain_id=PROJECT_DOMAIN_ID)
 # Create a session with the credentials
 sess = session.Session(auth=auth, verify=False)
-# Create nova client
+# Create nova client with the session created
 nova = nova_client.Client(version='2.1', session=sess)
 
 # Get hypervisor statistics over all compute nodes
