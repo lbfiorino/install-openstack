@@ -23,7 +23,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # API
 IDENTITY_API = "https://<openstack_server_api>:5000/v3"
 
-# OpenStack User and Project
+# OpenStack User and Project. From the OpenRC file.
 PROJECT_NAME = ""
 PROJECT_DOMAIN_ID = "default"
 USER_DOMAIN_NAME = "Default"
