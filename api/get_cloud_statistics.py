@@ -1,6 +1,7 @@
 
 #!/usr/bin/python3
 
+# https://docs.openstack.org/keystoneauth/latest/api/keystoneauth1.session.html
 # https://docs.openstack.org/python-novaclient/latest/user/python-api.html
 # https://docs.openstack.org/python-novaclient/latest/reference/index.html
 # https://docs.openstack.org//python-novaclient/latest/doc-python-novaclient.pdf
