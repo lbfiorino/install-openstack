@@ -36,10 +36,8 @@ auth = v3.Password(auth_url=IDENTITY_API,
                    project_name=PROJECT_NAME,
                    user_domain_name=USER_DOMAIN_NAME,
                    project_domain_id=PROJECT_DOMAIN_ID)
-
 # Create a session with the credentials
 sess = session.Session(auth=auth, verify=False)
-
 # Create nova client
 nova = nova_client.Client(version='2.1', session=sess)
 
