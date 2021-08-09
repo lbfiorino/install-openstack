@@ -439,7 +439,7 @@ ansible -i /root/multinode all -m ping
 ### 2.11 Revisão da configuração do kolla-ansible e deploy
 Foram usados os comandos para `development`.
 
-Para melhores resultados, o item **2.14 Tunning Ansible** mostra alguns parâmetros de performance do Ansible, que devem ser configurados antes de executar os comandos abaixo.
+:point_right: Para melhores resultados, o item **2.14 Tunning Ansible** mostra alguns parâmetros de performance do Ansible, que devem ser configurados antes de executar os comandos abaixo, porém, tal configuração não foi feita nesta instalação.
 
 :warning: **ATENÇÃO:**
 >-  Caso seja necessário habilitar outros módulos, leia o **item 8** antes de realizar o *deploy*;
