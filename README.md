@@ -770,6 +770,7 @@ cd /root/kolla-ansible/tools/
 
 
 ## 10. Remover um Nó de Computação
+[https://docs.openstack.org/kolla-ansible/victoria/user/adding-and-removing-hosts.html](https://docs.openstack.org/kolla-ansible/victoria/user/adding-and-removing-hosts.html)
 ```diff
 -TODO
 ```
