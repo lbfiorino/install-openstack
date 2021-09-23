@@ -32,18 +32,18 @@ openstack image list
 
 ## Save image
 ```bash
-openstack image save myInstance --file myInstance.qcow2
+openstack image save myInstanceSnapshot --file /var/myInstanceSnapshot.qcow2
 ```
 
 ## Convert to VirtualBox
 ```bash
-qemu-img convert -O vdi myInstance.qcow2 myInstance.vdi
+qemu-img convert -O vdi myInstanceSnapshot.qcow2 myInstanceSnapshot.vdi
 ```
 
 ## Convert to VMware
 ```bash
-qemu-img convert -O vdi myInstance.qcow2 myInstance.vmdk
+qemu-img convert -O vdi myInstanceSnapshot.qcow2 myInstanceSnapshot.vmdk
 ```
 
 ## Convert to Hyper-V
-qemu-img convert -O vpc myInstance.qcow2 myInstance.vhd
+qemu-img convert -O vpc myInstanceSnapshot.qcow2 myInstanceSnapshot.vhd
