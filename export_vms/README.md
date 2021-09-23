@@ -2,6 +2,8 @@
 
 On VirtualBox/VMware/Hyper-V, create a VM and use the converted disk.
 
+Converting between image formats: https://docs.openstack.org/image-guide/convert-images.html
+
 ## Requirements
 qemu-img - QEMU disk image utility
 ```bash
