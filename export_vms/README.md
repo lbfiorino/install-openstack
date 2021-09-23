@@ -1,6 +1,7 @@
 # Export OpenStack VMs and Convert to VirutalBox/VMware/Hyper-V
 
 ## Requirements
+qemu-img - QEMU disk image utility
 ```bash
 # Debian/Ubuntu
 apt-get install qemu-utils
