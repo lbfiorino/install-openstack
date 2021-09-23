@@ -2,7 +2,11 @@
 
 ## Requirements
 ```bash
+# Debian/Ubuntu
 apt-get install qemu-utils
+
+#CentOS
+yum install qemu-img
 ```
 
 ## List intances
