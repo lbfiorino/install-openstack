@@ -13,6 +13,7 @@ yum install qemu-img
 ## List intances
 ```bash
 openstack server list
+```
 
 ## Stop instance
 ```bash
