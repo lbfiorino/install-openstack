@@ -51,6 +51,6 @@ qemu-img convert -O vdi myInstanceSnapshot.qcow2 myInstanceSnapshot.vmdk
 qemu-img convert -O vpc myInstanceSnapshot.qcow2 myInstanceSnapshot.vhd
 
 # VHDX
-qemu-img convert -O VHDX myInstanceSnapshot.qcow2 myInstanceSnapshot.vhdx
+qemu-img convert -O vhdx myInstanceSnapshot.qcow2 myInstanceSnapshot.vhdx
 ```
 
