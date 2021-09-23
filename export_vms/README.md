@@ -10,9 +10,9 @@ apt-get install qemu-utils
 yum install qemu-img
 ```
 ### Version used 
-Ubuntu 20.04  
-qemu-img version 4.2.1  
-Supported formats: blkdebug blklogwrites blkreplay blkverify bochs cloop copy-on-read dmg file ftp ftps host_cdrom host_device http https iscsi iser luks nbd null-aio                    null-co nvme parallels qcow qcow2 qed quorum raw rbd replication sheepdog ssh throttle vdi vhdx vmdk vpc vvfat
+- Ubuntu 20.04  
+- qemu-img 4.2.1  
+
 
 ## List intances
 ```bash
