@@ -1,4 +1,6 @@
-# Export OpenStack VMs and Convert to VirutalBox/VMware/Hyper-V
+# Export OpenStack VMs and Convert to VirtualBox/VMware/Hyper-V
+
+On VirtualBox/VMware/Hyper-V, create a VM and use the converted disk.
 
 ## Requirements
 qemu-img - QEMU disk image utility
