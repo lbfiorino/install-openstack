@@ -30,7 +30,7 @@ openstack server image create --name myInstanceSnapshot myInstance
 openstack image list
 ```
 
-## Save image
+## Download image
 ```bash
 openstack image save myInstanceSnapshot --file /var/myInstanceSnapshot.qcow2
 ```
