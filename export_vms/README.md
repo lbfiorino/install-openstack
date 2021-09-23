@@ -32,7 +32,7 @@ openstack image list
 
 ## Download image
 ```bash
-openstack image save myInstanceSnapshot --file /var/myInstanceSnapshot.qcow2
+openstack image save myInstanceSnapshot --file myInstanceSnapshot.qcow2
 ```
 
 ## Convert to VirtualBox
