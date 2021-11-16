@@ -13,7 +13,7 @@ apt-get install qemu-utils
 #CentOS
 yum install qemu-img
 ```
-### Version used 
+### Versions used 
 - Ubuntu 20.04  
 - qemu-img 4.2.1  
 
