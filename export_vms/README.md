@@ -39,7 +39,7 @@ openstack image list
 ```
 
 ## Download image
-:warning:
+:warning: Must have enough free RAM to read the image.
 ```bash
 openstack image save myInstanceSnapshot --file myInstanceSnapshot.qcow2
 ```
