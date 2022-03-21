@@ -44,7 +44,7 @@ openstack image list
 openstack image save myInstanceSnapshot --file myInstanceSnapshot.qcow2
 ```
 
-Solution 1 - Openstack deployed with Kolla-Ansible:
+### Solution 1 - Openstack deployed with Kolla-Ansible:  
 Copy image from glance docker container.
 ```
 docker cp glance_api:/var/lib/glance/images/{IMAGE_ID} /var/tmp/{IMAGE_NAME}.{FORMAT}
