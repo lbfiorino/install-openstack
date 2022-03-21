@@ -52,7 +52,8 @@ openstack image save myInstanceSnapshot --file myInstanceSnapshot.qcow2
 Copy image from glance docker container.
 ```
 #Copy image
-docker cp glance_api:/var/lib/glance/images/{IMAGE_ID} /var/tmp/myInstanceSnapshot.{DISK_FORMAT}
+# If the disk format is qcow2.
+docker cp glance_api:/var/lib/glance/images/{IMAGE_ID} /var/tmp/myInstanceSnapshot.qcow2
 ```
 
 ## Convert to VirtualBox
