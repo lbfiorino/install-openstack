@@ -41,13 +41,18 @@ openstack image list
 ## Download image
 :warning: Must have enough free RAM to read the image.
 ```bash
+# Get image disk format
+openstack image show -c disk_format myInstanceSnapshot
+
+# If the disk format is qcow2.
 openstack image save myInstanceSnapshot --file myInstanceSnapshot.qcow2
 ```
 
-### Solution 1 - Openstack deployed with Kolla-Ansible:  
+### Solution 1 - Openstack deployed with Kolla-Ansible:
 Copy image from glance docker container.
 ```
-docker cp glance_api:/var/lib/glance/images/{IMAGE_ID} /var/tmp/{IMAGE_NAME}.{FORMAT}
+#Copy image
+docker cp glance_api:/var/lib/glance/images/{IMAGE_ID} /var/tmp/myInstanceSnapshot.{DISK_FORMAT}
 ```
 
 ## Convert to VirtualBox
