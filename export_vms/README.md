@@ -63,7 +63,7 @@ qemu-img convert -O vdi myInstanceSnapshot.qcow2 myInstanceSnapshot.vdi
 
 ## Convert to VMware
 ```bash
-qemu-img convert -O vdi myInstanceSnapshot.qcow2 myInstanceSnapshot.vmdk
+qemu-img convert -O vmdk myInstanceSnapshot.qcow2 myInstanceSnapshot.vmdk
 ```
 
 ## Convert to Hyper-V
