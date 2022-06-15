@@ -1,5 +1,7 @@
 # Instalação do OpenStack Multi-Nó com Kolla-Ansible  :cloud:
 
+## Troubleshooting
+
   - [OpenStack Release: Victoria](#openstack-release-victoria)
   - [Limitações](#limitações)
   - [Requisitos mínimos de hardware](#requisitos-mínimos-de-hardware)
