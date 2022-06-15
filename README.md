@@ -3,7 +3,7 @@
 ## Troubleshooting
 - Falha DHCP : `docker restart neutron_dhcp_agent` no controlador.
 - VM demorando a iniciar após a criação: `docker restart neutron_l3_agent` no controlador.
-- Reiniciar todos os agentes do neutron: `docker restart neutron_openvswitch_agent neutron_dhcp_agent neutron_l3_agent neutron_metadata_agent`
+- Reiniciar os agentes do neutron: `docker restart neutron_openvswitch_agent neutron_dhcp_agent neutron_l3_agent neutron_metadata_agent`
 
 ## Instalação
 
