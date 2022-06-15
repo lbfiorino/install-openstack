@@ -1,6 +1,8 @@
 # Instalação do OpenStack Multi-Nó com Kolla-Ansible  :cloud:
 
 ## Troubleshooting
+- Falha DHCP --> `docker restart neutron_dhcp_agent` 
+- VM demorando a iniciar após a criação: `docker restart neutron_l3_agent`
 
 ## Instalação
 
