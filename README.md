@@ -6,7 +6,10 @@
 - VM demorando a iniciar após a criação: `docker restart neutron_l3_agent` no controlador.
 - Reiniciar os agentes do neutron: `docker restart neutron_openvswitch_agent neutron_dhcp_agent neutron_l3_agent neutron_metadata_agent`
 #### Gnocchi
-- Purge old resources: gnocchi resource batch delete "ended_at < 2022-06-30 17:25:00+00:00"
+- Purge old resources examples: 
+>`gnocchi resource batch delete 'ended_at < "2021-12-31T23:59:59.000000"'`
+>`openstack metric resource batch delete "ended_at < '-30days'"`
+  
 ## Instalação
 
   - [OpenStack Release: Victoria](#openstack-release-victoria)
