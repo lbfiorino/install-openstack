@@ -7,8 +7,8 @@
 - Reiniciar os agentes do neutron: `docker restart neutron_openvswitch_agent neutron_dhcp_agent neutron_l3_agent neutron_metadata_agent`
 #### Gnocchi
 - Purge old resources examples: 
->`gnocchi resource batch delete 'ended_at < "2021-12-31T23:59:59.000000"'`
->`openstack metric resource batch delete "ended_at < '-30days'"`
+  -`gnocchi resource batch delete 'ended_at < "2021-12-31T23:59:59.000000"'`
+  -`openstack metric resource batch delete "ended_at < '-30days'"`
   
 ## Instalação
 
