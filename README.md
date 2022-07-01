@@ -7,7 +7,7 @@
 - Reiniciar os agentes do neutron: `docker restart neutron_openvswitch_agent neutron_dhcp_agent neutron_l3_agent neutron_metadata_agent`
 #### Gnocchi
 - Purge old resources examples: 
-  - `gnocchi resource batch delete 'ended_at < "2021-12-31T23:59:59.000000"'`
+  - `gnocchi resource batch delete "ended_at < '2021-12-31T23:59:59.000000'"`
   - `gnocchi resource batch delete "ended_at < '-30days'"`
   - `openstack metric resource batch delete "ended_at < '-30days'"`
   
