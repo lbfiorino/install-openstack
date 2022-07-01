@@ -1,10 +1,12 @@
 # Instalação do OpenStack Multi-Nó com Kolla-Ansible  :cloud:
 
 ## Troubleshooting
+#### Neutron 
 - Falha DHCP : `docker restart neutron_dhcp_agent` no controlador.
 - VM demorando a iniciar após a criação: `docker restart neutron_l3_agent` no controlador.
 - Reiniciar os agentes do neutron: `docker restart neutron_openvswitch_agent neutron_dhcp_agent neutron_l3_agent neutron_metadata_agent`
-
+#### Gnocchi
+- Purge old resources: gnocchi resource batch delete "ended_at < 2022-06-30 17:25:00+00:00"
 ## Instalação
 
   - [OpenStack Release: Victoria](#openstack-release-victoria)
