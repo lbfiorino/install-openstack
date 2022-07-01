@@ -8,6 +8,7 @@
 #### Gnocchi
 - Purge old resources examples: 
   - `gnocchi resource batch delete 'ended_at < "2021-12-31T23:59:59.000000"'`
+  - `gnocchi resource batch delete "ended_at < '-30days'"`
   - `openstack metric resource batch delete "ended_at < '-30days'"`
   
 ## Instalação
